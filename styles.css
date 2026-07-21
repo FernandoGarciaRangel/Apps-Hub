@@ -1,14 +1,17 @@
 :root {
   --bg: #09090b;
-  --bg-card: #18181b;
+  --bg-card: #161618;
+  --bg-card-2: #1d1d21;
   --border: #27272a;
-  --border-hover: rgba(249, 115, 22, 0.4);
+  --border-hover: rgba(249, 115, 22, 0.45);
   --text: #f4f4f5;
   --text-dim: #a1a1aa;
   --text-faint: #71717a;
   --accent: #f97316;
+  --accent-soft: #fb923c;
   --accent-dim: #c2410c;
   --accent-glow: rgba(249, 115, 22, 0.18);
+  --radius: 1.1rem;
   --font-display: 'Syne', system-ui, sans-serif;
   --font-body: 'Nunito', system-ui, sans-serif;
 }
@@ -30,21 +33,34 @@ body {
   overflow-x: hidden;
 }
 
+/* Layered background: warm glow top + bottom, plus a faint dot grid */
 .bg-glow {
   position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: radial-gradient(ellipse 80% 50% at 50% -10%, var(--accent-glow), transparent 60%);
+  background:
+    radial-gradient(ellipse 70% 45% at 50% -8%, var(--accent-glow), transparent 60%),
+    radial-gradient(ellipse 55% 40% at 88% 105%, rgba(249, 115, 22, 0.07), transparent 55%);
+}
+
+.bg-glow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 22px 22px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 28%, #000 30%, transparent 75%);
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 28%, #000 30%, transparent 75%);
 }
 
 .page {
   position: relative;
   z-index: 1;
-  max-width: 32rem;
+  max-width: 33rem;
   margin: 0 auto;
   min-height: 100vh;
-  padding: 4rem 1.25rem 2.5rem;
+  padding: clamp(3rem, 10vh, 5rem) 1.25rem 2.5rem;
   display: flex;
   flex-direction: column;
 }
@@ -54,22 +70,36 @@ body {
 }
 
 .eyebrow {
-  margin: 0 0 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0 0 0.9rem;
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent);
 }
 
+.eyebrow::before {
+  content: "";
+  width: 1.5rem;
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+
 .intro h1 {
-  margin: 0 0 0.6rem;
+  margin: 0 0 0.65rem;
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(2.25rem, 8vw, 2.75rem);
+  font-size: clamp(2.25rem, 8vw, 2.9rem);
+  line-height: 1.05;
   letter-spacing: -0.02em;
-  color: var(--text);
+  background: linear-gradient(180deg, #ffffff 0%, #cfcfd4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .lede {
@@ -87,23 +117,29 @@ body {
 }
 
 .entry {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 1.15rem 1.15rem;
-  border-radius: 1.1rem;
+  padding: 1.15rem;
+  border-radius: var(--radius);
   border: 1px solid var(--border);
-  background: var(--bg-card);
+  background: linear-gradient(180deg, var(--bg-card-2), var(--bg-card));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
   text-decoration: none;
   color: inherit;
-  transition: border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .entry:hover,
 .entry:focus-visible {
   border-color: var(--border-hover);
-  box-shadow: 0 0 32px -12px var(--accent-glow);
-  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 0 0 1px rgba(249, 115, 22, 0.12),
+    0 14px 40px -20px var(--accent-glow),
+    0 10px 30px -22px rgba(0, 0, 0, 0.75);
+  transform: translateY(-2px);
 }
 
 .entry:active {
@@ -120,11 +156,20 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2.75rem;
-  height: 2.75rem;
+  width: 2.85rem;
+  height: 2.85rem;
   border-radius: 0.85rem;
-  background: var(--accent-glow);
+  background: linear-gradient(145deg, rgba(249, 115, 22, 0.22), rgba(249, 115, 22, 0.07));
+  box-shadow: inset 0 0 0 1px rgba(249, 115, 22, 0.25);
+  color: var(--accent-soft);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.entry:hover .entry-icon,
+.entry:focus-visible .entry-icon {
   color: var(--accent);
+  box-shadow: inset 0 0 0 1px rgba(249, 115, 22, 0.5), 0 0 22px -6px var(--accent-glow);
+  transform: scale(1.05);
 }
 
 .entry-icon svg {
@@ -137,13 +182,13 @@ body {
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.22rem;
 }
 
 .entry-title {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 1.06rem;
   color: var(--text);
 }
 
@@ -157,7 +202,7 @@ body {
   flex-shrink: 0;
   display: flex;
   color: var(--text-faint);
-  transition: color 0.18s ease, transform 0.18s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .entry-arrow svg {
@@ -168,7 +213,7 @@ body {
 .entry:hover .entry-arrow,
 .entry:focus-visible .entry-arrow {
   color: var(--accent);
-  transform: translate(2px, -2px);
+  transform: translate(3px, -3px);
 }
 
 .site-footer {
@@ -177,10 +222,21 @@ body {
   text-align: center;
 }
 
+.site-footer::before {
+  content: "";
+  display: block;
+  width: 100%;
+  max-width: 8rem;
+  height: 1px;
+  margin: 0 auto 1.4rem;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+
 .site-footer a {
   font-size: 0.8rem;
   color: var(--text-faint);
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .site-footer a:hover,
@@ -188,15 +244,36 @@ body {
   color: var(--accent);
 }
 
+/* Entrance — staggered rise. `backwards` fill so hover transforms still win after it ends. */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.intro,
+.entry,
+.site-footer {
+  animation: rise 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) backwards;
+}
+
+.intro { animation-delay: 0.02s; }
+.entry:nth-child(1) { animation-delay: 0.12s; }
+.entry:nth-child(2) { animation-delay: 0.2s; }
+.site-footer { animation-delay: 0.3s; }
+
 @media (prefers-reduced-motion: reduce) {
-  .entry {
+  .intro,
+  .entry,
+  .site-footer {
+    animation: none;
+  }
+  .entry,
+  .entry-icon,
+  .entry-arrow {
     transition: none;
   }
   .entry:hover,
   .entry:focus-visible {
     transform: none;
-  }
-  .entry-arrow {
-    transition: none;
   }
 }
