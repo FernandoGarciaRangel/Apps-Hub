@@ -17,5 +17,7 @@ Sem build, sem dependências npm — `index.html` + `styles.css`.
 ## Rodar localmente
 
 ```
-npx serve .
+npx serve . -l 8080
 ```
+
+A porta 8080 é fixa por convenção: o `btn-back` dos outros dois apps aponta para `http://localhost:8080/` quando roda em localhost. Calculadora TMB usa 8081 e WeightChartS usa 3000, para os três subirem ao mesmo tempo.

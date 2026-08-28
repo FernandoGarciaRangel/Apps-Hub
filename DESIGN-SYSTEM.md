@@ -98,6 +98,17 @@ Razões WCAG calculadas, não estimadas. Estas duas mudam o visual que existe ho
 
 Por isso existe `--accent-text` separado de `--accent`. Sempre que o laranja for **texto**, use `--accent-text`. Quando for **preenchimento, borda, ícone ou traço de gráfico**, use `--accent` (que não muda).
 
+**E isso vale para `:hover` e `:focus`, não só para o estado em repouso.** É onde a regra escapa: no tema escuro o instinto é clarear o laranja no hover, o que funciona (`--accent-soft` sobre `--bg` dá 8,8:1). No tema claro, clarear **quebra** — o hover fica menos legível que o repouso.
+
+Medido num caso real (`.btn-link` do WeightChartS, tema claro):
+
+| Estado | Cor | Razão | |
+|---|---|---|---|
+| repouso | `--accent-text` `#c2410c` | 5,2:1 | passa |
+| hover | `--accent` `#f97316` | **2,8:1** | reprova |
+
+No claro, **hover escurece**. Uma auditoria que só mede o estado em repouso não pega isso — meça hover e foco também.
+
 ### 2.2 Texto sobre laranja é quase-preto, nunca branco
 
 | Par | Razão | Veredito |
@@ -154,6 +165,18 @@ Nunca escreva `rgba(249,115,22,0.12)` direto num componente — use `var(--accen
 
 O `--accent-glow` no claro é 0,10 — o valor que dá 4,49:1 e reprova por um fio. Um cartão que o use como fundo pode passar por acaso, se estiver sobre uma superfície mais clara que `--bg`, e reprovar quando alguém mudar o contexto. Esse caso foi encontrado de verdade no `.stat-accent` do WeightChartS.
 
+### 2.5 Como medir sem inventar reprovação
+
+As razões acima só valem se forem medidas direito. Três armadilhas já produziram falso alarme aqui — as três em sessões diferentes, com a mesma conclusão errada de "isto reprova".
+
+**Espere a transição acabar.** Os apps animam `background-color` e `color` em 0,2s. Ler `getComputedStyle` logo depois de trocar `data-theme` devolve o valor **interpolado**, não o final — dá para ver o `html` já claro e o `body` ainda escuro no mesmo instante. Um `sleep` de ~600ms resolve; injetar `* { transition: none !important }` antes de medir resolve de forma determinística e é melhor. Esta é a reincidente: mordeu três vezes.
+
+**Filtre o que está ocluso.** Revelar várias telas ao mesmo tempo para medir tudo de uma vez faz medir texto que está por baixo de um scrim, contra o fundo errado. Meça uma camada de cada vez, ou descarte elementos que não sejam o topo em `document.elementFromPoint` no próprio centro.
+
+**Não confie no pixel; confie na medição.** Três falsos alarmes nesta série vieram de olhar imagem reduzida: um laranja "mais claro" que era idêntico, uns numerais "achatados" que são o desenho do Syne, e um gráfico "sem linha" que era artefato de captura de página inteira com `<canvas>`. Em todos, o pixel mentiu e o número acertou.
+
+O corolário útil: quando a medição e a imagem discordam, **investigue antes de reportar**. Nenhum dos três era bug.
+
 ---
 
 ## 3. Tipografia
@@ -196,6 +219,74 @@ Mesmos nomes e mesmo comportamento nos três apps.
 | `segmented` | trilho `--surface-2` com `--radius-sm` e padding 5px; item ativo é `btn-primary` em miniatura |
 
 Alvos de toque: **mínimo 44px** de altura em qualquer controle.
+
+### `btn-back` — a volta para o portal
+
+Os três apps têm deploys separados, e o hub aponta **só de ida**: abre WeightChartS e Calculadora com `target="_blank"` e fica na aba de trás. Isso mascara o problema no navegador, mas o beco sem saída é real em três situações:
+
+- **PWA instalado** — o WeightChartS é `display: standalone`; instalado, não existe aba de hub nenhuma
+- acesso direto por URL ou favorito
+- a aba do hub foi fechada
+
+Por isso cada app que **não** é o portal carrega um `btn-back` no header:
+
+```html
+<a href="https://apps-hub-beta.vercel.app"
+   class="btn-back"
+   aria-label="Voltar para o portal de apps">← Apps</a>
+```
+
+Regras:
+
+- É um **link**, não botão — navega de verdade, e navega **na mesma aba**. Sem `target="_blank"`: abrir mais uma aba é o que criou o problema.
+- Visual de `btn-secondary`, na mesma linha dos outros controles do header. Altura ≥44px como qualquer controle.
+- URL absoluta e literal. Deploys separados: não existe caminho relativo que chegue ao hub.
+- O Apps-Hub **não** tem `btn-back` — ele é o destino.
+
+**Uma instância no header não basta.** Toda camada que cobre o header — tela cheia, `fixed inset-0`, overlay com z-index acima — precisa da sua própria. Senão a peça fica inalcançável exatamente onde ela é necessária.
+
+Foi o que aconteceu na primeira versão desta seção, que dizia só "no header". No WeightChartS o `#authScreen` é `z-50` e o `#landingScreen` é `z-[55]`, contra `z-40` do header: os dois tapam o `btn-back` por completo. E `app.js` guarda `weightcharts_skip_landing`, então o usuário recorrente e deslogado cai **direto na tela de login** a cada abertura — vê o formulário e mais nada. No PWA instalado, sem aba de hub por trás, é beco sem saída no cenário mais comum de todos.
+
+A verificação é mecânica: para cada camada de tela cheia do app, pergunte "daqui dá para sair?". Se a resposta depender do botão "voltar" do navegador, a camada precisa de um `btn-back`.
+
+**E onde a camada tem variantes que se alternam, a saída pertence ao contêiner, não à variante.** O painel de auth do WeightChartS troca entre `#loginForm`, `#registerForm` e `#forgotPasswordForm` por `hidden`; um `btn-back` dentro de um deles sumiria ao trocar para "Criar conta" — desapareceria exatamente ao navegar. Ele fica ao nível do painel, presente nas três.
+
+**Não** resolva com um elemento flutuante acima de tudo. Ficaria fora do `aria-modal="true"` do diálogo — leitor de tela ignora conteúdo fora do diálogo ativo, e a saída sumiria justamente para quem mais depende dela.
+
+Se o domínio do hub mudar, são dois arquivos a atualizar. Está registrado em `Apps-Hub/CLAUDE.md`, junto do `curl` que recupera a URL pelo campo `homepage` do GitHub.
+
+#### Em dev, o `btn-back` aponta para o hub local
+
+Com a URL de produção fixa no HTML, clicar em "voltar" durante o desenvolvimento **ejeta você do localhost direto para o site publicado**. Por isso os apps reescrevem o destino quando estão em `localhost`.
+
+Portas fixas — os três precisam rodar ao mesmo tempo para essa navegação existir:
+
+| App | Porta | Como sobe |
+|---|---|---|
+| Apps-Hub | **8080** | `npx serve . -l 8080` |
+| Calculadora TMB | **8081** | `npx serve . -l 8081` |
+| WeightChartS | **3000** | `npm run dev` |
+
+Antes disso os três colidiam: o WeightChartS usa 3000 e os outros dois diziam `npx serve .`, cujo default também é 3000.
+
+O script vai no fim do `<body>`:
+
+```html
+<script>
+  (function () {
+    var h = location.hostname;
+    if (h !== 'localhost' && h !== '127.0.0.1') return;
+    var el = document.querySelectorAll('.btn-back');
+    for (var i = 0; i < el.length; i++) el[i].href = 'http://localhost:8080/';
+  })();
+</script>
+```
+
+A direção importa: **o HTML carrega a URL de produção e o dev reescreve**, nunca o contrário. Assim o caminho sem JavaScript, e qualquer caminho onde o script falhe, degrada para o comportamento certo em produção — que é o único que os usuários veem.
+
+**A comparação é por igualdade estrita, e isso não é detalhe de estilo.** Trocar por `hostname.indexOf('localhost') !== -1`, `startsWith` ou uma regex frouxa faz `localhost.evil.com` e `127.0.0.1.evil.com` passarem no teste. Aqui o estrago seria pequeno — o link apontaria para a máquina de quem visita em vez do hub —, mas comparar hostname por substring é o mesmo erro que produz falhas graves quando o alvo é verificação de origem em `postMessage` ou em fluxo de autenticação. A forma certa custa o mesmo: compare o hostname inteiro, com `!==`.
+
+Se o hub não estiver de pé, o clique dá erro de conexão. É o sinal certo ("suba o hub"), e melhor que pular silenciosamente para produção.
 
 ### Foco — igual nos três, sem exceção
 
