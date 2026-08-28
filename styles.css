@@ -1,19 +1,30 @@
+/* Tokens compartilhados vêm de tokens.css (carregado antes deste arquivo).
+   Aqui ficam só os tokens locais do hub e o estilo dos seus componentes. */
+
 :root {
-  --bg: #09090b;
-  --bg-card: #161618;
-  --bg-card-2: #1d1d21;
-  --border: #27272a;
-  --border-hover: rgba(249, 115, 22, 0.45);
-  --text: #f4f4f5;
-  --text-dim: #a1a1aa;
-  --text-faint: #71717a;
-  --accent: #f97316;
-  --accent-soft: #fb923c;
-  --accent-dim: #c2410c;
-  --accent-glow: rgba(249, 115, 22, 0.18);
-  --radius: 1.1rem;
-  --font-display: 'Syne', system-ui, sans-serif;
-  --font-body: 'Nunito', system-ui, sans-serif;
+  /* Locais do hub: variam por tema mas não fazem parte do sistema compartilhado. */
+  --card-bg: linear-gradient(180deg, var(--surface-2), var(--surface));
+  --card-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  --card-shadow-hover:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 0 0 1px rgba(249, 115, 22, 0.12),
+    0 14px 40px -20px var(--accent-glow),
+    0 10px 30px -22px rgba(0, 0, 0, 0.75);
+  --h1-gradient: linear-gradient(180deg, #ffffff 0%, #cfcfd4 100%);
+  --icon-bg: linear-gradient(145deg, rgba(249, 115, 22, 0.22), rgba(249, 115, 22, 0.07));
+  --dot-grid: rgba(255, 255, 255, 0.025);
+}
+
+:root[data-theme="light"] {
+  --card-bg: #ffffff;
+  --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --card-shadow-hover:
+    0 0 0 1px rgba(249, 115, 22, 0.16),
+    0 25px 50px -12px rgba(0, 0, 0, 0.10),
+    0 14px 40px -24px rgba(249, 115, 22, 0.45);
+  --h1-gradient: linear-gradient(180deg, #18181b 0%, #3f3f46 100%);
+  --icon-bg: rgba(249, 115, 22, 0.13);
+  --dot-grid: rgba(0, 0, 0, 0.035);
 }
 
 * { box-sizing: border-box; }
@@ -48,7 +59,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-image: radial-gradient(var(--dot-grid) 1px, transparent 1px);
   background-size: 22px 22px;
   -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 28%, #000 30%, transparent 75%);
   mask-image: radial-gradient(ellipse 80% 60% at 50% 28%, #000 30%, transparent 75%);
@@ -65,6 +76,16 @@ body {
   flex-direction: column;
 }
 
+/* —— Cabeçalho —— */
+
+/* Barra própria acima do título: o botão não disputa largura com o h1, que
+   usa background-clip:text e some silenciosamente se transbordar a caixa. */
+.page-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
 .intro {
   margin-bottom: 2.5rem;
 }
@@ -79,36 +100,81 @@ body {
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 .eyebrow::before {
   content: "";
   width: 1.5rem;
   height: 1px;
-  background: linear-gradient(90deg, var(--accent), transparent);
+  background: linear-gradient(90deg, currentColor, transparent);
 }
 
 .intro h1 {
   margin: 0 0 0.65rem;
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(2.25rem, 8vw, 2.9rem);
+  font-size: var(--step-4);
   line-height: 1.05;
   letter-spacing: -0.02em;
-  background: linear-gradient(180deg, #ffffff 0%, #cfcfd4 100%);
+  background: var(--h1-gradient);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
+/* Abaixo de ~360px, "Ferramentas" em Syne 800 não cabe nem no mínimo do
+   --step-4 — e como o h1 usa background-clip:text, o excedente some em vez
+   de estourar visivelmente. Tamanho medido para caber em 320px. */
+@media (max-width: 360px) {
+  .intro h1 {
+    font-size: 1.7rem;
+  }
+}
+
 .lede {
   margin: 0;
-  font-size: 0.975rem;
+  font-size: var(--step-0);
   line-height: 1.55;
   color: var(--text-dim);
   max-width: 34ch;
 }
+
+/* —— Botão de tema —— */
+
+.theme-toggle {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  color: var(--accent-text);
+  border-color: var(--border-hover);
+}
+
+.theme-toggle svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+/* Só um dos dois ícones aparece — o que representa o tema para o qual o clique leva. */
+.theme-toggle .icon-moon { display: none; }
+:root[data-theme="light"] .theme-toggle .icon-moon { display: block; }
+:root[data-theme="light"] .theme-toggle .icon-sun { display: none; }
+
+/* —— Lista de apps —— */
 
 .menu {
   display: flex;
@@ -124,8 +190,8 @@ body {
   padding: 1.15rem;
   border-radius: var(--radius);
   border: 1px solid var(--border);
-  background: linear-gradient(180deg, var(--bg-card-2), var(--bg-card));
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
   text-decoration: none;
   color: inherit;
   transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
@@ -134,11 +200,7 @@ body {
 .entry:hover,
 .entry:focus-visible {
   border-color: var(--border-hover);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.06),
-    0 0 0 1px rgba(249, 115, 22, 0.12),
-    0 14px 40px -20px var(--accent-glow),
-    0 10px 30px -22px rgba(0, 0, 0, 0.75);
+  box-shadow: var(--card-shadow-hover);
   transform: translateY(-2px);
 }
 
@@ -146,7 +208,9 @@ body {
   transform: translateY(0) scale(0.99);
 }
 
-.entry:focus-visible {
+.entry:focus-visible,
+.theme-toggle:focus-visible,
+.site-footer a:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
@@ -159,15 +223,14 @@ body {
   width: 2.85rem;
   height: 2.85rem;
   border-radius: 0.85rem;
-  background: linear-gradient(145deg, rgba(249, 115, 22, 0.22), rgba(249, 115, 22, 0.07));
+  background: var(--icon-bg);
   box-shadow: inset 0 0 0 1px rgba(249, 115, 22, 0.25);
-  color: var(--accent-soft);
+  color: var(--accent-text);
   transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
 }
 
 .entry:hover .entry-icon,
 .entry:focus-visible .entry-icon {
-  color: var(--accent);
   box-shadow: inset 0 0 0 1px rgba(249, 115, 22, 0.5), 0 0 22px -6px var(--accent-glow);
   transform: scale(1.05);
 }
@@ -188,12 +251,12 @@ body {
 .entry-title {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.06rem;
+  font-size: var(--step-1);
   color: var(--text);
 }
 
 .entry-desc {
-  font-size: 0.85rem;
+  font-size: var(--step--1);
   line-height: 1.4;
   color: var(--text-dim);
 }
@@ -212,9 +275,11 @@ body {
 
 .entry:hover .entry-arrow,
 .entry:focus-visible .entry-arrow {
-  color: var(--accent);
+  color: var(--accent-text);
   transform: translate(3px, -3px);
 }
+
+/* —— Rodapé —— */
 
 .site-footer {
   margin-top: auto;
@@ -232,16 +297,17 @@ body {
   background: linear-gradient(90deg, transparent, var(--border), transparent);
 }
 
+/* --text-dim, não --text-faint: a 0.8rem, 4,1:1 no escuro reprova AA. */
 .site-footer a {
-  font-size: 0.8rem;
-  color: var(--text-faint);
+  font-size: var(--step--1);
+  color: var(--text-dim);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .site-footer a:hover,
 .site-footer a:focus-visible {
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 /* Entrance — staggered rise. `backwards` fill so hover transforms still win after it ends. */
@@ -262,15 +328,9 @@ body {
 .site-footer { animation-delay: 0.3s; }
 
 @media (prefers-reduced-motion: reduce) {
-  .intro,
-  .entry,
-  .site-footer {
-    animation: none;
-  }
-  .entry,
-  .entry-icon,
-  .entry-arrow {
-    transition: none;
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
   }
   .entry:hover,
   .entry:focus-visible {

@@ -23,6 +23,8 @@ Se uma tela que você precisa não estiver desenhada, peça o artboard em vez de
 
 Copie este bloco para o `tokens.css` do repo, sem alterar valores.
 
+> **Nunca ponha caminho relativo dentro do `tokens.css`.** O arquivo é byte-idêntico nos três repos, mas o layout de cada um é diferente — no Apps-Hub ele fica na raiz, no WeightChartS em `src/css/`. Um `../DESIGN-SYSTEM.md` que resolve certo num resolve errado no outro, e a byte-identidade garante que o texto errado seja copiado junto. Foi o que aconteceu: o caminho apontava para `WeightChartS/src/DESIGN-SYSTEM.md`, que nunca existiu. Referências dentro deste arquivo citam repo e nome, nunca caminho.
+
 ```css
 :root {
   /* superfícies */
