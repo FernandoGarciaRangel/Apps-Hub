@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Syne:wght@600;700;800&display=swap">
+  <style>
+    body {
+      margin: 0;
+      background: #131316;
+      color: #f4f4f5;
+      font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: #f97316; }
+    a:hover { color: #fb923c; }
+    .mono { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; }
+  </style>
+</helmet>
+
+<div style="padding: 44px 48px 52px; display: flex; flex-direction: column; gap: 30px;">
+
+  <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;">
+    <h1 style="margin: 0; font-family: 'Syne', system-ui, sans-serif; font-weight: 800; font-size: 28px; letter-spacing: -0.02em; color: #f4f4f5;">Avisos e confirmações</h1>
+    <span style="font-size: 14px; color: #a1a1aa;">toasts nos dois temas, modais no claro</span>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 16px;">
+    <h2 style="margin: 0; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 19px; color: #f4f4f5;">Toasts</h2>
+
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px;">
+
+      <div style="padding: 22px 20px; border-radius: 18px; background: #09090b; border: 1px solid #27272a; display: flex; flex-direction: column; gap: 12px;">
+        <span class="mono" style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #a1a1aa;">escuro</span>
+        <div style="padding: 15px 19px; border-radius: 10px; background: #f97316; color: #09090b; font-weight: 700; font-size: 15px; text-align: center; box-shadow: 0 8px 32px rgba(0,0,0,0.45);">Registro adicionado</div>
+        <div style="padding: 15px 19px; border-radius: 10px; background: #dc2626; color: #ffffff; font-weight: 700; font-size: 15px; text-align: center; box-shadow: 0 8px 32px rgba(0,0,0,0.45);">Já existe um registro para hoje</div>
+        <div style="padding: 15px 19px; border-radius: 10px; background: #1d1d21; border: 1px solid #27272a; color: #f4f4f5; font-weight: 700; font-size: 15px; text-align: center; box-shadow: 0 8px 32px rgba(0,0,0,0.45);">Importando registros…</div>
+      </div>
+
+      <div style="padding: 22px 20px; border-radius: 18px; background: #fafafa; border: 1px solid #e4e4e7; display: flex; flex-direction: column; gap: 12px;">
+        <span class="mono" style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #52525b;">claro</span>
+        <div style="padding: 15px 19px; border-radius: 10px; background: #f97316; color: #09090b; font-weight: 700; font-size: 15px; text-align: center; box-shadow: 0 8px 32px rgba(0,0,0,0.14);">Registro adicionado</div>
+        <div style="padding: 15px 19px; border-radius: 10px; background: #dc2626; color: #ffffff; font-weight: 700; font-size: 15px; text-align: center; box-shadow: 0 8px 32px rgba(0,0,0,0.14);">Já existe um registro para hoje</div>
+        <div style="padding: 15px 19px; border-radius: 10px; background: #f4f4f5; border: 1px solid #e4e4e7; color: #18181b; font-weight: 700; font-size: 15px; text-align: center; box-shadow: 0 8px 32px rgba(0,0,0,0.14);">Importando registros…</div>
+      </div>
+
+    </div>
+
+    <p style="margin: 0; font-size: 13px; line-height: 1.6; color: #a1a1aa; max-width: 108ch;">Sucesso e erro são <strong style="color: #f4f4f5;">idênticos nos dois temas</strong> — são preenchimentos chapados, e preenchimento não muda entre temas. O de sucesso era gradiente laranja com texto branco (2,8:1) e agora é chapado a 7,1:1. Só o informativo acompanha a superfície.</p>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 16px;">
+    <h2 style="margin: 0; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 19px; color: #f4f4f5;">Modais no tema claro</h2>
+
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px;">
+
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <span class="mono" style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #f97316;">#modalConfirmar</span>
+        <div style="border-radius: 18px; background: #e9e9ec; border: 1px solid #e4e4e7; padding: 22px 20px;">
+          <div style="padding: 19px; border-radius: 16px; background: #ffffff; border: 1px solid #e4e4e7; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.14); display: flex; flex-direction: column; gap: 14px;">
+            <div style="display: flex; flex-direction: column; gap: 5px;">
+              <span style="font-size: 17px; font-weight: 700; color: #18181b;">Confirmar</span>
+              <span style="font-size: 13px; line-height: 1.55; color: #52525b;">Excluir o registro de 72,4 kg de Agosto de 2026 · Semana 4? Não dá para desfazer.</span>
+            </div>
+            <div style="display: flex; gap: 9px;">
+              <span style="flex-grow: 1; display: flex; align-items: center; justify-content: center; height: 44px; border-radius: 10px; background: #f4f4f5; border: 1px solid #e4e4e7; color: #18181b; font-weight: 600; font-size: 14px;">Cancelar</span>
+              <span style="flex-grow: 1; display: flex; align-items: center; justify-content: center; height: 44px; border-radius: 10px; background: #dc2626; color: #ffffff; font-weight: 700; font-size: 14px;">Excluir</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <span class="mono" style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #f97316;">#modalEditarPeso</span>
+        <div style="border-radius: 18px; background: #e9e9ec; border: 1px solid #e4e4e7; padding: 22px 20px;">
+          <div style="padding: 19px; border-radius: 16px; background: #ffffff; border: 1px solid #e4e4e7; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.14); display: flex; flex-direction: column; gap: 14px;">
+            <div style="display: flex; flex-direction: column; gap: 5px;">
+              <span style="font-size: 17px; font-weight: 700; color: #18181b;">Corrigir registro</span>
+              <span style="font-size: 13px; color: #52525b;">Ajuste o valor ou a data.</span>
+            </div>
+            <div style="display: flex; align-items: center; height: 46px; border-radius: 10px; background: #f4f4f5; border: 1px solid #e4e4e7; overflow: hidden;">
+              <span style="flex-grow: 1; padding: 0 13px; font-size: 15px; color: #18181b;">72,4</span>
+              <span style="padding: 0 13px; height: 100%; display: flex; align-items: center; font-size: 13px; font-weight: 700; color: #52525b; border-left: 1px solid #e4e4e7;">kg</span>
+            </div>
+            <div style="display: flex; align-items: center; height: 46px; padding: 0 13px; border-radius: 10px; background: #f4f4f5; border: 1px solid #e4e4e7;">
+              <span style="font-size: 15px; color: #18181b;">27/08/2026</span>
+            </div>
+            <div style="display: flex; gap: 9px;">
+              <span style="flex-grow: 1; display: flex; align-items: center; justify-content: center; height: 44px; border-radius: 10px; background: #f4f4f5; border: 1px solid #e4e4e7; color: #18181b; font-weight: 600; font-size: 14px;">Cancelar</span>
+              <span style="flex-grow: 1; display: flex; align-items: center; justify-content: center; height: 44px; border-radius: 10px; background: #f97316; color: #09090b; font-weight: 700; font-size: 14px;">Salvar</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div style="padding: 20px 24px; border-radius: 16px; background: #161618; border: 1px solid rgba(249,115,22,0.45); display: flex; flex-direction: column; gap: 8px;">
+    <span style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px; color: #f97316;">Vermelho preenchido leva branco; vermelho de texto, não</span>
+    <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #a1a1aa; max-width: 108ch;">É a única exceção à regra do branco, e é medida: branco sobre <span class="mono" style="color: #f97316;">#dc2626</span> dá <strong style="color: #f4f4f5;">4,83:1</strong> e passa. O mesmo <span class="mono" style="color: #f97316;">#dc2626</span> como <strong style="color: #f4f4f5;">texto</strong> sobre fundo escuro dá 4,12:1 e reprova — por isso o chip "Excluir" usa red-300 no escuro e red-700 no claro, nunca o vermelho base.</p>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

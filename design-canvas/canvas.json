@@ -1,0 +1,31 @@
+{
+  "pages": [
+    { "id": "page-1", "name": "Fundamentos" },
+    { "id": "page-2", "name": "Telas" },
+    { "id": "page-3", "name": "WeightChartS a fundo" }
+  ],
+  "artboards": [
+    { "file": "Main.dc.html", "page": "page-1", "title": "Fundamentos", "x": 0, "y": 0, "w": 1240, "h": 2740 },
+    { "file": "Componentes.dc.html", "page": "page-1", "title": "Componentes", "x": 1360, "y": 0, "w": 1240, "h": 1360 },
+
+    { "file": "AppsHub.dc.html", "page": "page-2", "title": "Apps-Hub", "x": 0, "y": 0, "w": 1240, "h": 860 },
+    { "file": "CalculadoraTMB.dc.html", "page": "page-2", "title": "Calculadora TMB", "x": 1360, "y": 0, "w": 1240, "h": 1420 },
+    { "file": "WeightChartS.dc.html", "page": "page-2", "title": "WeightChartS — dashboard", "x": 0, "y": 980, "w": 1240, "h": 1680 },
+    { "file": "WeightChartSTelas.dc.html", "page": "page-2", "title": "WeightChartS — entrada e modais", "x": 1360, "y": 1540, "w": 1300, "h": 1110 },
+
+    { "file": "WeightChartSRegistros.dc.html", "page": "page-3", "title": "Seus registros", "x": 0, "y": 0, "w": 1240, "h": 1320 },
+    { "file": "WeightChartSExplorar.dc.html", "page": "page-3", "title": "Explorar — tema claro", "x": 1360, "y": 0, "w": 1340, "h": 800 },
+    { "file": "WeightChartSAvisos.dc.html", "page": "page-3", "title": "Avisos e confirmações", "x": 1360, "y": 920, "w": 1240, "h": 1120 }
+  ],
+  "annotations": [
+    {
+      "id": "lacunas-fechadas",
+      "page": "page-3",
+      "x": 0,
+      "y": -150,
+      "w": 620,
+      "text": "Telas que faltavam quando o WeightChartS foi implementado.\nDesenhadas depois, contra o markup que ficou — o canvas aqui é registro do que existe, não proposta."
+    }
+  ],
+  "launch": { "view": "canvas", "page": "page-3" }
+}

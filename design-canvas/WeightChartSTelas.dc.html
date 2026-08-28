@@ -1,0 +1,211 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Syne:wght@600;700;800&display=swap">
+  <style>
+    body {
+      margin: 0;
+      background: #131316;
+      color: #f4f4f5;
+      font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: #f97316; }
+    a:hover { color: #fb923c; }
+    .mono { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; }
+  </style>
+</helmet>
+
+<div style="padding: 44px 48px 52px; display: flex; flex-direction: column; gap: 26px;">
+
+  <div style="display: flex; align-items: baseline; gap: 14px;">
+    <h1 style="margin: 0; font-family: 'Syne', system-ui, sans-serif; font-weight: 800; font-size: 28px; letter-spacing: -0.02em; color: #f4f4f5;">WeightChartS — entrada e modais</h1>
+    <span style="font-size: 14px; color: #a1a1aa;">landing no escuro, autenticação no claro, modais nos dois</span>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px;">
+
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <span class="mono" style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #f97316;">landingScreen · escuro</span>
+      <div style="border-radius: 18px; overflow: hidden; border: 1px solid #27272a; background: #09090b; background-image: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(249,115,22,0.14), transparent);">
+        <div style="padding: 28px 24px; display: flex; flex-direction: column; gap: 18px;">
+
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="display: flex; align-items: center; justify-content: center; width: 46px; height: 46px; color: #f97316;">
+              <svg viewBox="0 0 32 32" fill="none" style="width: 42px; height: 42px;">
+                <path d="M4 22 L11 14 L16 19 L28 6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="28" cy="6" r="2.6" fill="currentColor"/>
+              </svg>
+            </span>
+            <div style="display: flex; flex-direction: column; gap: 2px;">
+              <span style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 24px; letter-spacing: -0.01em; color: #f4f4f5;">Weight<span style="color: #f97316;">Chart</span>S</span>
+              <span style="font-size: 12px; color: #a1a1aa;">Peso com clareza, no celular ou no PC</span>
+            </div>
+          </div>
+
+          <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #a1a1aa;">Registre seu peso ao longo do tempo, veja a <strong style="color: #f4f4f5;">evolução num gráfico</strong> e mantenha os dados sincronizados na nuvem com a sua conta.</p>
+
+          <div style="display: flex; flex-direction: column; gap: 11px;">
+            <div style="display: flex; align-items: flex-start; gap: 11px;">
+              <span style="display: flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 8px; background: rgba(249,115,22,0.14); color: #f97316; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 13px; flex-shrink: 0;">1</span>
+              <span style="font-size: 13px; line-height: 1.5; color: #a1a1aa;"><strong style="color: #f4f4f5;">Registro rápido</strong> — adicione peso em segundos, com data automática.</span>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 11px;">
+              <span style="display: flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 8px; background: rgba(249,115,22,0.14); color: #f97316; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 13px; flex-shrink: 0;">2</span>
+              <span style="font-size: 13px; line-height: 1.5; color: #a1a1aa;"><strong style="color: #f4f4f5;">Gráfico e estatísticas</strong> — visualize tendências e mantenha a motivação.</span>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 11px;">
+              <span style="display: flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 8px; background: rgba(249,115,22,0.14); color: #f97316; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 13px; flex-shrink: 0;">3</span>
+              <span style="font-size: 13px; line-height: 1.5; color: #a1a1aa;"><strong style="color: #f4f4f5;">Conta segura</strong> — faça login para salvar os dados no Firebase.</span>
+            </div>
+          </div>
+
+          <span style="display: flex; align-items: center; justify-content: center; height: 48px; border-radius: 12px; background: #f97316; color: #09090b; font-weight: 700; font-size: 15px;">Iniciar</span>
+
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 11px; padding-top: 14px; border-top: 1px solid #27272a;">
+            <span style="font-size: 12px; color: #a1a1aa;">Fernando Garcia Rangel</span>
+            <div style="display: flex; gap: 8px;">
+              <span style="display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 11px; border-radius: 8px; background: #1d1d21; border: 1px solid #27272a; font-size: 12px; color: #a1a1aa;">
+                <svg viewBox="0 0 24 24" fill="currentColor" style="width: 13px; height: 13px;"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                GitHub
+              </span>
+              <span style="display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 11px; border-radius: 8px; background: #1d1d21; border: 1px solid #27272a; font-size: 12px; color: #a1a1aa;">
+                <svg viewBox="0 0 24 24" fill="currentColor" style="width: 13px; height: 13px;"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <span class="mono" style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #f97316;">authScreen · claro</span>
+      <div style="border-radius: 18px; overflow: hidden; border: 1px solid #e4e4e7; background: #e9e9ec; padding: 26px 20px; display: flex; flex-direction: column; justify-content: center; min-height: 520px;">
+        <div style="padding: 26px 24px; border-radius: 16px; background: #ffffff; border: 1px solid #e4e4e7; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.14); display: flex; flex-direction: column; gap: 16px;">
+
+          <div style="display: flex; flex-direction: column; gap: 4px;">
+            <span style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 22px; color: #18181b;">Entrar</span>
+            <span style="font-size: 13px; color: #52525b;">Acesse sua conta para sincronizar os registros.</span>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <span style="font-size: 13px; font-weight: 600; color: #52525b;">E-mail</span>
+            <div style="display: flex; align-items: center; height: 46px; padding: 0 13px; border-radius: 10px; background: #f4f4f5; border: 1px solid #e4e4e7;">
+              <span style="font-size: 14px; color: #18181b;">fernando@exemplo.com</span>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <span style="font-size: 13px; font-weight: 600; color: #52525b;">Senha</span>
+            <div style="display: flex; align-items: center; height: 46px; padding: 0 13px; border-radius: 10px; background: #ffffff; border: 1px solid #f97316; box-shadow: 0 0 0 3px rgba(249,115,22,0.20);">
+              <span style="font-size: 16px; letter-spacing: 0.22em; color: #18181b;">••••••••</span>
+            </div>
+          </div>
+
+          <span style="display: flex; align-items: center; justify-content: center; height: 48px; border-radius: 12px; background: #f97316; color: #09090b; font-weight: 700; font-size: 15px;">Entrar</span>
+          <span style="display: flex; align-items: center; justify-content: center; height: 44px; border-radius: 12px; background: #ffffff; border: 1px solid #e4e4e7; color: #18181b; font-weight: 600; font-size: 14px;">Criar conta</span>
+
+          <span style="font-size: 13px; font-weight: 600; color: #c2410c; text-align: center;">Esqueci minha senha</span>
+
+          <div style="display: flex; align-items: flex-start; gap: 9px; padding: 11px 13px; border-radius: 10px; background: rgba(220,38,38,0.08); border: 1px solid rgba(220,38,38,0.25);">
+            <span style="display: flex; align-items: center; justify-content: center; width: 17px; height: 17px; flex-shrink: 0; color: #b91c1c; margin-top: 1px;">
+              <svg viewBox="0 0 24 24" fill="none" style="width: 17px; height: 17px;">
+                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.9"/>
+                <path d="M12 7.5v5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+                <circle cx="12" cy="16.2" r="1.05" fill="currentColor"/>
+              </svg>
+            </span>
+            <span style="font-size: 12px; line-height: 1.5; color: #b91c1c;">Senha incorreta. Tente de novo ou redefina.</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <span class="mono" style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #f97316;">modais · escuro</span>
+
+      <div style="border-radius: 18px; overflow: hidden; border: 1px solid #27272a; background: #050506; padding: 20px 18px; display: flex; flex-direction: column; gap: 16px;">
+
+        <div style="padding: 18px; border-radius: 16px; background: #161618; border: 1px solid #27272a; display: flex; flex-direction: column; gap: 13px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+            <span style="font-size: 17px; font-weight: 700; color: #f4f4f5;">Explorar perfis</span>
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 8px; background: #1d1d21; border: 1px solid #27272a; color: #a1a1aa;">
+              <svg viewBox="0 0 24 24" fill="none" style="width: 14px; height: 14px;"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+          </div>
+          <div style="border-radius: 12px; border: 1px solid #27272a; overflow: hidden;">
+            <div style="display: flex; align-items: center; gap: 11px; padding: 12px 14px; background: #1d1d21;">
+              <span style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 10px; background: rgba(249,115,22,0.14); color: #f97316; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 14px; flex-shrink: 0;">F</span>
+              <span style="display: flex; flex-direction: column; gap: 1px; flex-grow: 1;">
+                <span style="font-size: 14px; font-weight: 700; color: #f4f4f5;">Fernando</span>
+                <span style="font-size: 12px; color: #a1a1aa;">64 registros · meta 72,0</span>
+              </span>
+              <span style="display: flex; color: #f97316;">
+                <svg viewBox="0 0 24 24" fill="none" style="width: 16px; height: 16px;"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 11px; padding: 12px 14px; background: #161618; border-top: 1px solid #27272a;">
+              <span style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 10px; background: rgba(249,115,22,0.10); color: #fb923c; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 14px; flex-shrink: 0;">M</span>
+              <span style="display: flex; flex-direction: column; gap: 1px; flex-grow: 1;">
+                <span style="font-size: 14px; font-weight: 700; color: #f4f4f5;">Marina</span>
+                <span style="font-size: 12px; color: #a1a1aa;">31 registros</span>
+              </span>
+              <span style="display: flex; color: #71717a;">
+                <svg viewBox="0 0 24 24" fill="none" style="width: 16px; height: 16px;"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div style="padding: 18px; border-radius: 16px; background: #161618; border: 1px solid #27272a; display: flex; flex-direction: column; gap: 13px;">
+          <div style="display: flex; flex-direction: column; gap: 4px;">
+            <span style="font-size: 17px; font-weight: 700; color: #f4f4f5;">Confirmar</span>
+            <span style="font-size: 13px; line-height: 1.5; color: #a1a1aa;">Excluir o registro de 72,4 kg de 27 de agosto? Não dá para desfazer.</span>
+          </div>
+          <div style="display: flex; gap: 9px;">
+            <span style="flex-grow: 1; display: flex; align-items: center; justify-content: center; height: 44px; border-radius: 10px; background: #1d1d21; border: 1px solid #27272a; color: #f4f4f5; font-weight: 600; font-size: 14px;">Cancelar</span>
+            <span style="flex-grow: 1; display: flex; align-items: center; justify-content: center; height: 44px; border-radius: 10px; background: #f97316; color: #09090b; font-weight: 700; font-size: 14px;">Excluir</span>
+          </div>
+        </div>
+
+        <div style="padding: 18px; border-radius: 16px; background: #161618; border: 1px solid #27272a; display: flex; flex-direction: column; gap: 13px;">
+          <div style="display: flex; flex-direction: column; gap: 4px;">
+            <span style="font-size: 17px; font-weight: 700; color: #f4f4f5;">Corrigir registro</span>
+            <span style="font-size: 13px; color: #a1a1aa;">Ajuste o valor ou a data.</span>
+          </div>
+          <div style="display: flex; align-items: center; height: 46px; border-radius: 10px; background: #1d1d21; border: 1px solid #27272a; overflow: hidden;">
+            <span style="flex-grow: 1; padding: 0 13px; font-size: 15px; color: #f4f4f5;">72,4</span>
+            <span style="padding: 0 13px; height: 100%; display: flex; align-items: center; font-size: 13px; font-weight: 700; color: #a1a1aa; border-left: 1px solid #27272a;">kg</span>
+          </div>
+          <div style="display: flex; align-items: center; height: 46px; padding: 0 13px; border-radius: 10px; background: #1d1d21; border: 1px solid #27272a;">
+            <span style="font-size: 15px; color: #f4f4f5;">27/08/2026</span>
+          </div>
+          <div style="display: flex; gap: 9px;">
+            <span style="flex-grow: 1; display: flex; align-items: center; justify-content: center; height: 44px; border-radius: 10px; background: #1d1d21; border: 1px solid #27272a; color: #f4f4f5; font-weight: 600; font-size: 14px;">Cancelar</span>
+            <span style="flex-grow: 1; display: flex; align-items: center; justify-content: center; height: 44px; border-radius: 10px; background: #f97316; color: #09090b; font-weight: 700; font-size: 14px;">Salvar</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div style="padding: 20px 24px; border-radius: 16px; background: #161618; border: 1px solid #27272a; display: flex; flex-direction: column; gap: 8px;">
+    <span style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px; color: #f97316;">O ganho estrutural</span>
+    <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #a1a1aa; max-width: 104ch;">Estas telas hoje custam caro para retematizar: cada uma tem um bloco próprio de <span class="mono" style="color: #f97316;">html[data-theme="light"] … !important</span> em <span class="mono" style="color: #f97316;">styles.css</span>, mirando seletores como <span class="mono" style="color: #f97316;">.theme-landing .text-zinc-300</span>. Com a camada de tokens, o tema claro deixa de ser uma lista de exceções e passa a ser uma troca de variáveis.</p>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

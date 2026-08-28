@@ -1,0 +1,6 @@
+# Fontes do sistema de design: versionadas aqui, mas fora do deploy.
+# O hub e um site estatico servido da raiz do repo — sem esta exclusao a
+# Vercel publicaria DESIGN-SYSTEM.md e design-canvas/*.html no dominio do
+# hub, expondo material interno de design.
+DESIGN-SYSTEM.md
+design-canvas/

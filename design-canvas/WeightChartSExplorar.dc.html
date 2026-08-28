@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Syne:wght@600;700;800&display=swap">
+  <style>
+    body {
+      margin: 0;
+      background: #131316;
+      color: #f4f4f5;
+      font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: #f97316; }
+    a:hover { color: #fb923c; }
+    .mono { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; }
+  </style>
+</helmet>
+
+<div style="padding: 44px 48px 52px; display: flex; flex-direction: column; gap: 26px;">
+
+  <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;">
+    <h1 style="margin: 0; font-family: 'Syne', system-ui, sans-serif; font-weight: 800; font-size: 28px; letter-spacing: -0.02em; color: #f4f4f5;">Explorar — tema claro</h1>
+    <span style="font-size: 14px; color: #a1a1aa;">o escuro já está no artboard de entrada e modais</span>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px;">
+
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <span class="mono" style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #f97316;">lista de perfis</span>
+      <div style="border-radius: 18px; background: #e9e9ec; border: 1px solid #e4e4e7; padding: 20px 18px;">
+        <div style="border-radius: 16px; background: #ffffff; border: 1px solid #e4e4e7; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.14); overflow: hidden;">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 15px 17px; border-bottom: 1px solid #e4e4e7;">
+            <span style="font-size: 17px; font-weight: 700; color: #18181b;">Explorar perfis</span>
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 8px; background: #f4f4f5; border: 1px solid #e4e4e7; color: #52525b;">
+              <svg viewBox="0 0 24 24" fill="none" style="width: 14px; height: 14px;"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+          </div>
+          <div>
+            <div style="display: flex; align-items: center; gap: 11px; padding: 12px 15px;">
+              <span style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 10px; background: rgba(249,115,22,0.06); color: #c2410c; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 14px; flex-shrink: 0;">F</span>
+              <span style="display: flex; flex-direction: column; gap: 1px; flex-grow: 1; min-width: 0;">
+                <span style="font-size: 14px; font-weight: 600; color: #18181b;">Fernando</span>
+                <span style="font-size: 12px; color: #52525b;">64 registros · meta 72,0</span>
+              </span>
+              <span style="display: flex; color: #c2410c; flex-shrink: 0;">
+                <svg viewBox="0 0 24 24" fill="none" style="width: 16px; height: 16px;"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 11px; padding: 12px 15px; border-top: 1px solid #e4e4e7; background: #f4f4f5;">
+              <span style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 10px; background: rgba(249,115,22,0.06); color: #c2410c; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 14px; flex-shrink: 0;">M</span>
+              <span style="display: flex; flex-direction: column; gap: 1px; flex-grow: 1; min-width: 0;">
+                <span style="font-size: 14px; font-weight: 600; color: #18181b;">Marina</span>
+                <span style="font-size: 12px; color: #52525b;">31 registros</span>
+              </span>
+              <span style="display: flex; color: #71717a; flex-shrink: 0;">
+                <svg viewBox="0 0 24 24" fill="none" style="width: 16px; height: 16px;"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 11px; padding: 12px 15px; border-top: 1px solid #e4e4e7;">
+              <span style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 10px; background: rgba(249,115,22,0.06); color: #c2410c; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 14px; flex-shrink: 0;">J</span>
+              <span style="display: flex; flex-direction: column; gap: 1px; flex-grow: 1; min-width: 0;">
+                <span style="font-size: 14px; font-weight: 600; color: #18181b;">Joana</span>
+                <span style="font-size: 12px; color: #52525b;">12 registros</span>
+              </span>
+              <span style="display: flex; color: #71717a; flex-shrink: 0;">
+                <svg viewBox="0 0 24 24" fill="none" style="width: 16px; height: 16px;"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <span class="mono" style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #f97316;">vazio e erro</span>
+      <div style="border-radius: 18px; background: #e9e9ec; border: 1px solid #e4e4e7; padding: 20px 18px; display: flex; flex-direction: column; gap: 16px;">
+
+        <div style="border-radius: 16px; background: #ffffff; border: 1px solid #e4e4e7; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.14); overflow: hidden;">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 15px 17px; border-bottom: 1px solid #e4e4e7;">
+            <span style="font-size: 17px; font-weight: 700; color: #18181b;">Explorar perfis</span>
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 8px; background: #f4f4f5; border: 1px solid #e4e4e7; color: #52525b;">
+              <svg viewBox="0 0 24 24" fill="none" style="width: 14px; height: 14px;"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+          </div>
+          <p style="margin: 0; padding: 20px 16px; text-align: center; font-size: 14px; color: #52525b;">Nenhum perfil público no momento.</p>
+        </div>
+
+        <div style="border-radius: 16px; background: #ffffff; border: 1px solid #e4e4e7; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.14); overflow: hidden;">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 15px 17px; border-bottom: 1px solid #e4e4e7;">
+            <span style="font-size: 17px; font-weight: 700; color: #18181b;">Explorar perfis</span>
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 8px; background: #f4f4f5; border: 1px solid #e4e4e7; color: #52525b;">
+              <svg viewBox="0 0 24 24" fill="none" style="width: 14px; height: 14px;"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+          </div>
+          <p style="margin: 0; padding: 20px 16px; text-align: center; font-size: 14px; line-height: 1.55; color: #b91c1c;">Não foi possível carregar os perfis. Verifique sua conexão e tente novamente.</p>
+        </div>
+
+        <p style="margin: 0; font-size: 12px; line-height: 1.55; color: #a1a1aa;">São estados distintos de propósito: <span class="mono" style="color: #f97316;">listPublicProfiles()</span> lança em erro justamente para a UI não confundir "não há perfis" com "falhou ao carregar".</p>
+
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <span class="mono" style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #f97316;">detalhe · gráfico read-only</span>
+      <div style="border-radius: 18px; background: #e9e9ec; border: 1px solid #e4e4e7; padding: 20px 18px;">
+        <div style="border-radius: 16px; background: #ffffff; border: 1px solid #e4e4e7; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.14); overflow: hidden;">
+          <div style="display: flex; align-items: center; gap: 10px; padding: 15px 17px; border-bottom: 1px solid #e4e4e7;">
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 8px; background: #f4f4f5; border: 1px solid #e4e4e7; color: #52525b; flex-shrink: 0;">
+              <svg viewBox="0 0 24 24" fill="none" style="width: 15px; height: 15px;"><path d="M15 19 8 12l7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span style="display: flex; flex-direction: column; gap: 1px; flex-grow: 1; min-width: 0;">
+              <span style="font-size: 16px; font-weight: 700; color: #18181b;">Fernando</span>
+              <span style="font-size: 12px; color: #52525b;">64 registros · meta 72,0 kg</span>
+            </span>
+          </div>
+          <div style="padding: 16px;">
+            <svg viewBox="0 0 400 180" style="width: 100%; height: auto; display: block;">
+              <line x1="8" y1="18" x2="392" y2="18" stroke="rgba(0,0,0,0.1)" stroke-width="1"/>
+              <line x1="8" y1="54" x2="392" y2="54" stroke="rgba(0,0,0,0.1)" stroke-width="1"/>
+              <line x1="8" y1="90" x2="392" y2="90" stroke="rgba(0,0,0,0.1)" stroke-width="1"/>
+              <line x1="8" y1="126" x2="392" y2="126" stroke="rgba(0,0,0,0.1)" stroke-width="1"/>
+              <line x1="8" y1="162" x2="392" y2="162" stroke="rgba(0,0,0,0.1)" stroke-width="1"/>
+              <path d="M8,18 L51,42 L94,35 L137,66 L180,89 L223,81 L266,116 L309,133 L352,145 L392,162 L392,180 L8,180 Z" fill="rgba(249,115,22,0.14)"/>
+              <polyline points="8,18 51,42 94,35 137,66 180,89 223,81 266,116 309,133 352,145 392,162" fill="none" stroke="#f97316" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="8" y1="174" x2="392" y2="174" stroke="#c2410c" stroke-width="2" stroke-dasharray="7 5" opacity="0.8"/>
+              <circle cx="392" cy="162" r="4.5" fill="#f97316" stroke="#ffffff" stroke-width="2"/>
+            </svg>
+            <p style="margin: 12px 0 0; font-size: 12px; line-height: 1.5; color: #52525b;">Somente leitura — <span class="mono" style="color: #c2410c;">new WeightChart(id, { live: false })</span> não lê os dados do próprio usuário.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="padding: 20px 24px; border-radius: 16px; background: #161618; border: 1px solid #27272a; display: flex; flex-direction: column; gap: 8px;">
+    <span style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px; color: #f97316;">O gráfico não muda de cor entre temas</span>
+    <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #a1a1aa; max-width: 104ch;">O traço continua <span class="mono" style="color: #f97316;">--accent</span> nos dois temas — é preenchimento, não texto. O que troca é grade, ticks, tooltip e a borda dos pontos, que <span class="mono" style="color: #f97316;">getThemeColors()</span> passou a ler dos tokens em vez de hex fixos. A linha da meta era verde-esmeralda e agora é <span class="mono" style="color: #f97316;">--accent-soft</span> tracejado.</p>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

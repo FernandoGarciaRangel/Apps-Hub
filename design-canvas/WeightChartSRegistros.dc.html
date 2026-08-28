@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Syne:wght@600;700;800&display=swap">
+  <style>
+    body {
+      margin: 0;
+      background: #131316;
+      color: #f4f4f5;
+      font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: #f97316; }
+    a:hover { color: #fb923c; }
+    .mono { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; }
+  </style>
+</helmet>
+
+<div style="padding: 44px 48px 52px; display: flex; flex-direction: column; gap: 26px;">
+
+  <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;">
+    <h1 style="margin: 0; font-family: 'Syne', system-ui, sans-serif; font-weight: 800; font-size: 28px; letter-spacing: -0.02em; color: #f4f4f5;">Seus registros</h1>
+    <span style="font-size: 14px; color: #a1a1aa;">card na página e o mesmo conteúdo em <span class="mono" style="color: #f97316;">#modalRegistros</span></span>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px;">
+
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <span class="mono" style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #f97316;">escuro</span>
+
+      <div style="padding: 20px; border-radius: 18px; background: #09090b; border: 1px solid #27272a; display: flex; flex-direction: column; gap: 16px;">
+
+        <div style="padding: 17px; border-radius: 16px; background: #161618; border: 1px solid #27272a; display: flex; flex-direction: column; gap: 12px;">
+          <div style="display: flex; flex-direction: column; gap: 3px;">
+            <span style="font-size: 17px; font-weight: 700; color: #f4f4f5;">Seus registros</span>
+            <span style="font-size: 12px; color: #a1a1aa;">Os mais recentes — corrija o valor ou exclua se errou ao registrar.</span>
+          </div>
+
+          <div style="border-radius: 10px; border: 1px solid #27272a; overflow: hidden;">
+            <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 12px; background: #1d1d21;">
+              <span style="font-size: 14px; color: #a1a1aa;">Agosto de 2026 · Semana 4 · <strong style="color: #f4f4f5; font-weight: 700;">72,4 kg</strong></span>
+              <span style="display: flex; gap: 8px; flex-shrink: 0;">
+                <span style="display: inline-flex; align-items: center; height: 44px; padding: 0 14px; border-radius: 8px; background: #161618; border: 1px solid #27272a; font-size: 13px; font-weight: 600; color: #f4f4f5;">Corrigir</span>
+                <span style="display: inline-flex; align-items: center; height: 44px; padding: 0 14px; border-radius: 8px; background: rgba(220,38,38,0.12); border: 1px solid rgba(220,38,38,0.35); font-size: 13px; font-weight: 600; color: #fca5a5;">Excluir</span>
+              </span>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 12px; background: #1d1d21; border-top: 1px solid #27272a;">
+              <span style="font-size: 14px; color: #a1a1aa;">Agosto de 2026 · Semana 3 · <strong style="color: #f4f4f5; font-weight: 700;">73,1 kg</strong></span>
+              <span style="display: flex; gap: 8px; flex-shrink: 0;">
+                <span style="display: inline-flex; align-items: center; height: 44px; padding: 0 14px; border-radius: 8px; background: #161618; border: 1px solid #27272a; font-size: 13px; font-weight: 600; color: #f4f4f5;">Corrigir</span>
+                <span style="display: inline-flex; align-items: center; height: 44px; padding: 0 14px; border-radius: 8px; background: rgba(220,38,38,0.12); border: 1px solid rgba(220,38,38,0.35); font-size: 13px; font-weight: 600; color: #fca5a5;">Excluir</span>
+              </span>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 12px; background: #1d1d21; border-top: 1px solid #27272a;">
+              <span style="font-size: 14px; color: #a1a1aa;">Agosto de 2026 · Semana 2 · <strong style="color: #f4f4f5; font-weight: 700;">73,8 kg</strong></span>
+              <span style="display: flex; gap: 8px; flex-shrink: 0;">
+                <span style="display: inline-flex; align-items: center; height: 44px; padding: 0 14px; border-radius: 8px; background: #161618; border: 1px solid #27272a; font-size: 13px; font-weight: 600; color: #f4f4f5;">Corrigir</span>
+                <span style="display: inline-flex; align-items: center; height: 44px; padding: 0 14px; border-radius: 8px; background: rgba(220,38,38,0.12); border: 1px solid rgba(220,38,38,0.35); font-size: 13px; font-weight: 600; color: #fca5a5;">Excluir</span>
+              </span>
+            </div>
+          </div>
+
+          <span style="display: flex; align-items: center; justify-content: center; height: 44px; border-radius: 10px; font-size: 14px; font-weight: 600; color: #f97316;">Ver todos os 64 registros</span>
+        </div>
+
+        <div style="padding: 17px; border-radius: 16px; background: #161618; border: 1px solid #27272a; display: flex; flex-direction: column; gap: 10px;">
+          <span class="mono" style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #a1a1aa;">estado vazio</span>
+          <span style="font-size: 14px; color: #a1a1aa; padding: 8px 0;">Ainda não há registros.</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <span class="mono" style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #f97316;">claro</span>
+
+      <div style="padding: 20px; border-radius: 18px; background: #fafafa; border: 1px solid #e4e4e7; display: flex; flex-direction: column; gap: 16px;">
+
+        <div style="padding: 17px; border-radius: 16px; background: #ffffff; border: 1px solid #e4e4e7; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.08); display: flex; flex-direction: column; gap: 12px;">
+          <div style="display: flex; flex-direction: column; gap: 3px;">
+            <span style="font-size: 17px; font-weight: 700; color: #18181b;">Seus registros</span>
+            <span style="font-size: 12px; color: #52525b;">Os mais recentes — corrija o valor ou exclua se errou ao registrar.</span>
+          </div>
+
+          <div style="border-radius: 10px; border: 1px solid #e4e4e7; overflow: hidden;">
+            <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 12px; background: #f4f4f5;">
+              <span style="font-size: 14px; color: #52525b;">Agosto de 2026 · Semana 4 · <strong style="color: #18181b; font-weight: 700;">72,4 kg</strong></span>
+              <span style="display: flex; gap: 8px; flex-shrink: 0;">
+                <span style="display: inline-flex; align-items: center; height: 44px; padding: 0 14px; border-radius: 8px; background: #ffffff; border: 1px solid #e4e4e7; font-size: 13px; font-weight: 600; color: #18181b;">Corrigir</span>
+                <span style="display: inline-flex; align-items: center; height: 44px; padding: 0 14px; border-radius: 8px; background: rgba(220,38,38,0.08); border: 1px solid rgba(220,38,38,0.30); font-size: 13px; font-weight: 600; color: #b91c1c;">Excluir</span>
+              </span>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 12px; background: #f4f4f5; border-top: 1px solid #e4e4e7;">
+              <span style="font-size: 14px; color: #52525b;">Agosto de 2026 · Semana 3 · <strong style="color: #18181b; font-weight: 700;">73,1 kg</strong></span>
+              <span style="display: flex; gap: 8px; flex-shrink: 0;">
+                <span style="display: inline-flex; align-items: center; height: 44px; padding: 0 14px; border-radius: 8px; background: #ffffff; border: 1px solid #e4e4e7; font-size: 13px; font-weight: 600; color: #18181b;">Corrigir</span>
+                <span style="display: inline-flex; align-items: center; height: 44px; padding: 0 14px; border-radius: 8px; background: rgba(220,38,38,0.08); border: 1px solid rgba(220,38,38,0.30); font-size: 13px; font-weight: 600; color: #b91c1c;">Excluir</span>
+              </span>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 12px; background: #f4f4f5; border-top: 1px solid #e4e4e7;">
+              <span style="font-size: 14px; color: #52525b;">Agosto de 2026 · Semana 2 · <strong style="color: #18181b; font-weight: 700;">73,8 kg</strong></span>
+              <span style="display: flex; gap: 8px; flex-shrink: 0;">
+                <span style="display: inline-flex; align-items: center; height: 44px; padding: 0 14px; border-radius: 8px; background: #ffffff; border: 1px solid #e4e4e7; font-size: 13px; font-weight: 600; color: #18181b;">Corrigir</span>
+                <span style="display: inline-flex; align-items: center; height: 44px; padding: 0 14px; border-radius: 8px; background: rgba(220,38,38,0.08); border: 1px solid rgba(220,38,38,0.30); font-size: 13px; font-weight: 600; color: #b91c1c;">Excluir</span>
+              </span>
+            </div>
+          </div>
+
+          <span style="display: flex; align-items: center; justify-content: center; height: 44px; border-radius: 10px; font-size: 14px; font-weight: 600; color: #c2410c;">Ver todos os 64 registros</span>
+        </div>
+
+        <div style="padding: 17px; border-radius: 16px; background: #ffffff; border: 1px solid #e4e4e7; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.08); display: flex; flex-direction: column; gap: 10px;">
+          <span class="mono" style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #52525b;">estado vazio</span>
+          <span style="font-size: 14px; color: #52525b; padding: 8px 0;">Ainda não há registros.</span>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px;">
+
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <span class="mono" style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #f97316;">#modalRegistros · escuro</span>
+      <div style="border-radius: 18px; background: #050506; border: 1px solid #27272a; padding: 22px 20px;">
+        <div style="border-radius: 16px; background: #161618; border: 1px solid #27272a; overflow: hidden;">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 15px 17px; border-bottom: 1px solid #27272a;">
+            <span style="font-size: 17px; font-weight: 700; color: #f4f4f5;">Seus registros</span>
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 8px; background: #1d1d21; border: 1px solid #27272a; color: #a1a1aa;">
+              <svg viewBox="0 0 24 24" fill="none" style="width: 14px; height: 14px;"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+          </div>
+          <div style="padding: 8px; display: flex; flex-direction: column; gap: 6px; max-height: 250px;">
+            <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 12px; border-radius: 10px; background: #1d1d21;">
+              <span style="font-size: 14px; color: #a1a1aa;">Agosto de 2026 · Semana 4 · <strong style="color: #f4f4f5; font-weight: 700;">72,4 kg</strong></span>
+              <span style="display: flex; gap: 8px; flex-shrink: 0;">
+                <span style="display: inline-flex; align-items: center; height: 44px; padding: 0 14px; border-radius: 8px; background: #161618; border: 1px solid #27272a; font-size: 13px; font-weight: 600; color: #f4f4f5;">Corrigir</span>
+                <span style="display: inline-flex; align-items: center; height: 44px; padding: 0 14px; border-radius: 8px; background: rgba(220,38,38,0.12); border: 1px solid rgba(220,38,38,0.35); font-size: 13px; font-weight: 600; color: #fca5a5;">Excluir</span>
+              </span>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 12px; border-radius: 10px; background: #1d1d21;">
+              <span style="font-size: 14px; color: #a1a1aa;">Agosto de 2026 · Semana 3 · <strong style="color: #f4f4f5; font-weight: 700;">73,1 kg</strong></span>
+              <span style="display: flex; gap: 8px; flex-shrink: 0;">
+                <span style="display: inline-flex; align-items: center; height: 44px; padding: 0 14px; border-radius: 8px; background: #161618; border: 1px solid #27272a; font-size: 13px; font-weight: 600; color: #f4f4f5;">Corrigir</span>
+                <span style="display: inline-flex; align-items: center; height: 44px; padding: 0 14px; border-radius: 8px; background: rgba(220,38,38,0.12); border: 1px solid rgba(220,38,38,0.35); font-size: 13px; font-weight: 600; color: #fca5a5;">Excluir</span>
+              </span>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 12px; border-radius: 10px; background: #1d1d21; opacity: 0.55;">
+              <span style="font-size: 14px; color: #a1a1aa;">Agosto de 2026 · Semana 2 · <strong style="color: #f4f4f5; font-weight: 700;">73,8 kg</strong></span>
+              <span style="display: flex; gap: 8px; flex-shrink: 0;">
+                <span style="display: inline-flex; align-items: center; height: 44px; padding: 0 14px; border-radius: 8px; background: #161618; border: 1px solid #27272a; font-size: 13px; font-weight: 600; color: #f4f4f5;">Corrigir</span>
+                <span style="display: inline-flex; align-items: center; height: 44px; padding: 0 14px; border-radius: 8px; background: rgba(220,38,38,0.12); border: 1px solid rgba(220,38,38,0.35); font-size: 13px; font-weight: 600; color: #fca5a5;">Excluir</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <span class="mono" style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #f97316;">#modalRegistros · claro</span>
+      <div style="border-radius: 18px; background: #e9e9ec; border: 1px solid #e4e4e7; padding: 22px 20px;">
+        <div style="border-radius: 16px; background: #ffffff; border: 1px solid #e4e4e7; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.14); overflow: hidden;">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 15px 17px; border-bottom: 1px solid #e4e4e7;">
+            <span style="font-size: 17px; font-weight: 700; color: #18181b;">Seus registros</span>
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 8px; background: #f4f4f5; border: 1px solid #e4e4e7; color: #52525b;">
+              <svg viewBox="0 0 24 24" fill="none" style="width: 14px; height: 14px;"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+          </div>
+          <div style="padding: 8px; display: flex; flex-direction: column; gap: 6px; max-height: 250px;">
+            <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 12px; border-radius: 10px; background: #f4f4f5;">
+              <span style="font-size: 14px; color: #52525b;">Agosto de 2026 · Semana 4 · <strong style="color: #18181b; font-weight: 700;">72,4 kg</strong></span>
+              <span style="display: flex; gap: 8px; flex-shrink: 0;">
+                <span style="display: inline-flex; align-items: center; height: 44px; padding: 0 14px; border-radius: 8px; background: #ffffff; border: 1px solid #e4e4e7; font-size: 13px; font-weight: 600; color: #18181b;">Corrigir</span>
+                <span style="display: inline-flex; align-items: center; height: 44px; padding: 0 14px; border-radius: 8px; background: rgba(220,38,38,0.08); border: 1px solid rgba(220,38,38,0.30); font-size: 13px; font-weight: 600; color: #b91c1c;">Excluir</span>
+              </span>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 12px; border-radius: 10px; background: #f4f4f5;">
+              <span style="font-size: 14px; color: #52525b;">Agosto de 2026 · Semana 3 · <strong style="color: #18181b; font-weight: 700;">73,1 kg</strong></span>
+              <span style="display: flex; gap: 8px; flex-shrink: 0;">
+                <span style="display: inline-flex; align-items: center; height: 44px; padding: 0 14px; border-radius: 8px; background: #ffffff; border: 1px solid #e4e4e7; font-size: 13px; font-weight: 600; color: #18181b;">Corrigir</span>
+                <span style="display: inline-flex; align-items: center; height: 44px; padding: 0 14px; border-radius: 8px; background: rgba(220,38,38,0.08); border: 1px solid rgba(220,38,38,0.30); font-size: 13px; font-weight: 600; color: #b91c1c;">Excluir</span>
+              </span>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 12px; border-radius: 10px; background: #f4f4f5; opacity: 0.55;">
+              <span style="font-size: 14px; color: #52525b;">Agosto de 2026 · Semana 2 · <strong style="color: #18181b; font-weight: 700;">73,8 kg</strong></span>
+              <span style="display: flex; gap: 8px; flex-shrink: 0;">
+                <span style="display: inline-flex; align-items: center; height: 44px; padding: 0 14px; border-radius: 8px; background: #ffffff; border: 1px solid #e4e4e7; font-size: 13px; font-weight: 600; color: #18181b;">Corrigir</span>
+                <span style="display: inline-flex; align-items: center; height: 44px; padding: 0 14px; border-radius: 8px; background: rgba(220,38,38,0.08); border: 1px solid rgba(220,38,38,0.30); font-size: 13px; font-weight: 600; color: #b91c1c;">Excluir</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="padding: 20px 24px; border-radius: 16px; background: #161618; border: 1px solid #27272a; display: flex; flex-direction: column; gap: 8px;">
+    <span style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px; color: #f97316;">Vermelho não é cor de sistema — é token local</span>
+    <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #a1a1aa; max-width: 104ch;">O sistema não define cor de perigo; só o WeightChartS apaga dados. O chip "Excluir" usa vermelho <strong style="color: #f4f4f5;">de texto</strong>, não preenchido: <span class="mono" style="color: #f97316;">#dc2626</span> como texto sobre fundo escuro dá 4,12:1 e reprova AA, então no escuro é red-300 (<span class="mono" style="color: #f97316;">#fca5a5</span>) e no claro red-700 (<span class="mono" style="color: #f97316;">#b91c1c</span>). Preenchimento vermelho fica só para o toast de erro, onde o branco por cima dá 4,83:1.</p>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

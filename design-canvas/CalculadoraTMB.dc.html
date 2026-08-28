@@ -1,0 +1,239 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Syne:wght@600;700;800&display=swap">
+  <style>
+    body {
+      margin: 0;
+      background: #131316;
+      color: #f4f4f5;
+      font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: #f97316; }
+    a:hover { color: #fb923c; }
+    .mono { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; }
+  </style>
+</helmet>
+
+<div style="padding: 44px 48px 52px; display: flex; flex-direction: column; gap: 26px;">
+
+  <div style="display: flex; align-items: baseline; gap: 14px;">
+    <h1 style="margin: 0; font-family: 'Syne', system-ui, sans-serif; font-weight: 800; font-size: 28px; letter-spacing: -0.02em; color: #f4f4f5;">Calculadora TMB</h1>
+    <span style="font-size: 14px; color: #a1a1aa;">novo laranja, toggle com texto quase-preto, tema claro</span>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px;">
+
+    <div style="border-radius: 18px; overflow: hidden; border: 1px solid #27272a;">
+      <div style="padding: 32px 30px 30px; background: #09090b; background-image: radial-gradient(ellipse 55% 45% at 85% 10%, rgba(249,115,22,0.12), transparent 60%); display: flex; flex-direction: column; gap: 22px;">
+
+        <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 14px;">
+          <div style="display: flex; flex-direction: column; gap: 11px;">
+            <div style="display: inline-flex; align-self: flex-start; align-items: center; gap: 8px; padding: 6px 13px; border-radius: 100px; background: rgba(249,115,22,0.12);">
+              <span style="width: 6px; height: 6px; border-radius: 50%; background: #f97316;"></span>
+              <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #f97316;">Calculadora</span>
+            </div>
+            <h2 style="margin: 0; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 34px; line-height: 1.1; letter-spacing: -0.02em; color: #f4f4f5;">Taxa Metabólica<br><span style="color: #f97316;">Basal</span></h2>
+            <span style="font-size: 12px; color: #a1a1aa;">Fórmula de Mifflin-St Jeor · 1990</span>
+          </div>
+          <span style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 10px; background: #1d1d21; border: 1px solid #27272a; color: #a1a1aa; flex-shrink: 0;">
+            <svg viewBox="0 0 24 24" fill="none" style="width: 17px; height: 17px;">
+              <path d="M20.5 13.5A8 8 0 0 1 10.5 3.5a8.5 8.5 0 1 0 10 10Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+
+        <div style="padding: 22px; border-radius: 16px; background: #161618; border: 1px solid #27272a; display: flex; flex-direction: column; gap: 16px;">
+
+          <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; padding: 5px; border-radius: 10px; background: #1d1d21;">
+            <span style="display: flex; align-items: center; justify-content: center; height: 38px; border-radius: 8px; background: #f97316; color: #09090b; font-weight: 700; font-size: 14px;">Masculino</span>
+            <span style="display: flex; align-items: center; justify-content: center; height: 38px; border-radius: 8px; color: #a1a1aa; font-weight: 700; font-size: 14px;">Feminino</span>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <span style="font-size: 13px; font-weight: 600; color: #a1a1aa;">Peso</span>
+            <div style="display: flex; align-items: center; height: 46px; border-radius: 10px; background: #1d1d21; border: 1px solid #27272a; overflow: hidden;">
+              <span style="flex-grow: 1; padding: 0 13px; font-size: 15px; color: #f4f4f5;">70</span>
+              <span style="padding: 0 13px; height: 100%; display: flex; align-items: center; font-size: 13px; font-weight: 700; color: #a1a1aa; border-left: 1px solid #27272a;">kg</span>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <span style="font-size: 13px; font-weight: 600; color: #a1a1aa;">Altura</span>
+            <div style="display: flex; align-items: center; height: 46px; border-radius: 10px; background: #1d1d21; border: 1px solid #27272a; overflow: hidden;">
+              <span style="flex-grow: 1; padding: 0 13px; font-size: 15px; color: #f4f4f5;">175</span>
+              <span style="padding: 0 13px; height: 100%; display: flex; align-items: center; font-size: 13px; font-weight: 700; color: #a1a1aa; border-left: 1px solid #27272a;">cm</span>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <span style="font-size: 13px; font-weight: 600; color: #a1a1aa;">Idade</span>
+            <div style="display: flex; align-items: center; height: 46px; border-radius: 10px; background: #1d1d21; border: 1px solid #27272a; overflow: hidden;">
+              <span style="flex-grow: 1; padding: 0 13px; font-size: 15px; color: #f4f4f5;">25</span>
+              <span style="padding: 0 13px; height: 100%; display: flex; align-items: center; font-size: 13px; font-weight: 700; color: #a1a1aa; border-left: 1px solid #27272a;">anos</span>
+            </div>
+          </div>
+
+          <span style="display: flex; align-items: center; justify-content: center; height: 48px; border-radius: 10px; background: #f97316; color: #09090b; font-weight: 700; font-size: 15px;">Calcular TMB →</span>
+
+          <div style="padding: 18px; border-radius: 14px; background: #1d1d21; border: 1px solid rgba(249,115,22,0.30); display: flex; flex-direction: column; gap: 13px;">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <span style="font-size: 13px; color: #a1a1aa;">Sua TMB é</span>
+              <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; padding: 4px 10px; border-radius: 100px; background: rgba(249,115,22,0.14); color: #f97316;">kcal / dia</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 3px;">
+              <span style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 44px; line-height: 1; color: #f97316;">1.674</span>
+              <span style="font-size: 12px; color: #a1a1aa;">calorias necessárias em repouso</span>
+            </div>
+            <span class="mono" style="font-size: 11px; color: #a1a1aa; padding: 9px 11px; border-radius: 8px; background: #161618;">10 × 70 + 6,25 × 175 − 5 × 25 + 5</span>
+
+            <div style="display: flex; flex-direction: column; gap: 8px; padding-top: 4px; border-top: 1px solid #27272a;">
+              <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #f97316; padding-top: 9px;">Gasto por nível de atividade</span>
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+                <span style="font-size: 13px; color: #a1a1aa;">Sedentário</span>
+                <span style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; color: #f4f4f5;">2.009</span>
+              </div>
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+                <span style="font-size: 13px; color: #a1a1aa;">Levemente ativo</span>
+                <span style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; color: #f4f4f5;">2.301</span>
+              </div>
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+                <span style="font-size: 13px; color: #a1a1aa;">Moderadamente ativo</span>
+                <span style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; color: #f4f4f5;">2.595</span>
+              </div>
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+                <span style="font-size: 13px; color: #a1a1aa;">Muito ativo</span>
+                <span style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; color: #f4f4f5;">2.888</span>
+              </div>
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+                <span style="font-size: 13px; color: #a1a1aa;">Extremamente ativo</span>
+                <span style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; color: #f4f4f5;">3.181</span>
+              </div>
+            </div>
+
+            <span style="display: flex; align-items: center; justify-content: center; height: 40px; border-radius: 10px; background: #161618; border: 1px solid #27272a; color: #f4f4f5; font-weight: 600; font-size: 14px;">Copiar resumo</span>
+          </div>
+
+        </div>
+
+        <span style="font-size: 12px; line-height: 1.5; color: #a1a1aa; text-align: center;">Mifflin MD, St Jeor ST, et al. — J Am Diet Assoc. 1990</span>
+
+      </div>
+    </div>
+
+    <div style="border-radius: 18px; overflow: hidden; border: 1px solid #e4e4e7;">
+      <div style="padding: 32px 30px 30px; background: #fafafa; background-image: radial-gradient(ellipse 55% 45% at 85% 10%, rgba(249,115,22,0.10), transparent 60%); display: flex; flex-direction: column; gap: 22px;">
+
+        <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 14px;">
+          <div style="display: flex; flex-direction: column; gap: 11px;">
+            <div style="display: inline-flex; align-self: flex-start; align-items: center; gap: 8px; padding: 6px 13px; border-radius: 100px; background: rgba(249,115,22,0.14);">
+              <span style="width: 6px; height: 6px; border-radius: 50%; background: #f97316;"></span>
+              <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #c2410c;">Calculadora</span>
+            </div>
+            <h2 style="margin: 0; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 34px; line-height: 1.1; letter-spacing: -0.02em; color: #18181b;">Taxa Metabólica<br><span style="color: #c2410c;">Basal</span></h2>
+            <span style="font-size: 12px; color: #52525b;">Fórmula de Mifflin-St Jeor · 1990</span>
+          </div>
+          <span style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 10px; background: #ffffff; border: 1px solid #e4e4e7; color: #52525b; flex-shrink: 0;">
+            <svg viewBox="0 0 24 24" fill="none" style="width: 17px; height: 17px;">
+              <circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M12 3v2.2M12 18.8V21M4.2 12H2M22 12h-2.2M6.3 6.3 4.8 4.8M19.2 19.2l-1.5-1.5M17.7 6.3l1.5-1.5M4.8 19.2l1.5-1.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </div>
+
+        <div style="padding: 22px; border-radius: 16px; background: #ffffff; border: 1px solid #e4e4e7; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.08); display: flex; flex-direction: column; gap: 16px;">
+
+          <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; padding: 5px; border-radius: 10px; background: #f4f4f5;">
+            <span style="display: flex; align-items: center; justify-content: center; height: 38px; border-radius: 8px; background: #f97316; color: #09090b; font-weight: 700; font-size: 14px;">Masculino</span>
+            <span style="display: flex; align-items: center; justify-content: center; height: 38px; border-radius: 8px; color: #52525b; font-weight: 700; font-size: 14px;">Feminino</span>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <span style="font-size: 13px; font-weight: 600; color: #52525b;">Peso</span>
+            <div style="display: flex; align-items: center; height: 46px; border-radius: 10px; background: #f4f4f5; border: 1px solid #e4e4e7; overflow: hidden;">
+              <span style="flex-grow: 1; padding: 0 13px; font-size: 15px; color: #18181b;">70</span>
+              <span style="padding: 0 13px; height: 100%; display: flex; align-items: center; font-size: 13px; font-weight: 700; color: #52525b; border-left: 1px solid #e4e4e7;">kg</span>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <span style="font-size: 13px; font-weight: 600; color: #52525b;">Altura</span>
+            <div style="display: flex; align-items: center; height: 46px; border-radius: 10px; background: #f4f4f5; border: 1px solid #e4e4e7; overflow: hidden;">
+              <span style="flex-grow: 1; padding: 0 13px; font-size: 15px; color: #18181b;">175</span>
+              <span style="padding: 0 13px; height: 100%; display: flex; align-items: center; font-size: 13px; font-weight: 700; color: #52525b; border-left: 1px solid #e4e4e7;">cm</span>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <span style="font-size: 13px; font-weight: 600; color: #52525b;">Idade</span>
+            <div style="display: flex; align-items: center; height: 46px; border-radius: 10px; background: #f4f4f5; border: 1px solid #e4e4e7; overflow: hidden;">
+              <span style="flex-grow: 1; padding: 0 13px; font-size: 15px; color: #18181b;">25</span>
+              <span style="padding: 0 13px; height: 100%; display: flex; align-items: center; font-size: 13px; font-weight: 700; color: #52525b; border-left: 1px solid #e4e4e7;">anos</span>
+            </div>
+          </div>
+
+          <span style="display: flex; align-items: center; justify-content: center; height: 48px; border-radius: 10px; background: #f97316; color: #09090b; font-weight: 700; font-size: 15px;">Calcular TMB →</span>
+
+          <div style="padding: 18px; border-radius: 14px; background: #fafafa; border: 1px solid rgba(249,115,22,0.35); display: flex; flex-direction: column; gap: 13px;">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <span style="font-size: 13px; color: #52525b;">Sua TMB é</span>
+              <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; padding: 4px 10px; border-radius: 100px; background: rgba(249,115,22,0.16); color: #c2410c;">kcal / dia</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 3px;">
+              <span style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 44px; line-height: 1; color: #c2410c;">1.674</span>
+              <span style="font-size: 12px; color: #52525b;">calorias necessárias em repouso</span>
+            </div>
+            <span class="mono" style="font-size: 11px; color: #52525b; padding: 9px 11px; border-radius: 8px; background: #f4f4f5;">10 × 70 + 6,25 × 175 − 5 × 25 + 5</span>
+
+            <div style="display: flex; flex-direction: column; gap: 8px; padding-top: 4px; border-top: 1px solid #e4e4e7;">
+              <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #c2410c; padding-top: 9px;">Gasto por nível de atividade</span>
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+                <span style="font-size: 13px; color: #52525b;">Sedentário</span>
+                <span style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; color: #18181b;">2.009</span>
+              </div>
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+                <span style="font-size: 13px; color: #52525b;">Levemente ativo</span>
+                <span style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; color: #18181b;">2.301</span>
+              </div>
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+                <span style="font-size: 13px; color: #52525b;">Moderadamente ativo</span>
+                <span style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; color: #18181b;">2.595</span>
+              </div>
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+                <span style="font-size: 13px; color: #52525b;">Muito ativo</span>
+                <span style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; color: #18181b;">2.888</span>
+              </div>
+              <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px;">
+                <span style="font-size: 13px; color: #52525b;">Extremamente ativo</span>
+                <span style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; color: #18181b;">3.181</span>
+              </div>
+            </div>
+
+            <span style="display: flex; align-items: center; justify-content: center; height: 40px; border-radius: 10px; background: #ffffff; border: 1px solid #e4e4e7; color: #18181b; font-weight: 600; font-size: 14px;">Copiar resumo</span>
+          </div>
+
+        </div>
+
+        <span style="font-size: 12px; line-height: 1.5; color: #52525b; text-align: center;">Mifflin MD, St Jeor ST, et al. — J Am Diet Assoc. 1990</span>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px;">
+    <p style="margin: 0; font-size: 13px; line-height: 1.55; color: #a1a1aa;">Valores reais da fórmula para 70 kg / 175 cm / 25 anos, masculino — batem com <span class="mono" style="color: #f97316;">app.js</span>.</p>
+    <p style="margin: 0; font-size: 13px; line-height: 1.55; color: #a1a1aa;">O número grande do resultado usa <span class="mono" style="color: #f97316;">--accent-text</span>: laranja no escuro, orange-700 no claro.</p>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

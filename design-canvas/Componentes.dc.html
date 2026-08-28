@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Syne:wght@600;700;800&display=swap">
+  <style>
+    body {
+      margin: 0;
+      background: #09090b;
+      color: #f4f4f5;
+      font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: #f97316; }
+    a:hover { color: #fb923c; }
+    .mono { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; }
+  </style>
+</helmet>
+
+<div style="padding: 56px 48px 64px; display: flex; flex-direction: column; gap: 36px;">
+
+  <div style="display: flex; flex-direction: column; gap: 12px;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <span style="width: 26px; height: 1px; background: linear-gradient(90deg, #f97316, rgba(249,115,22,0));"></span>
+      <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #f97316;">Vocabulário</span>
+    </div>
+    <h1 style="margin: 0; font-family: 'Syne', system-ui, sans-serif; font-weight: 800; font-size: 36px; line-height: 1.1; letter-spacing: -0.02em; color: #f4f4f5;">Componentes</h1>
+    <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #a1a1aa; max-width: 76ch;">Mesmos nomes de classe e mesmo comportamento nos três apps. Cada peça aparece no escuro e no claro — se algo só funciona num dos dois, não entra no sistema.</p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px;">
+
+    <div style="padding: 28px; border-radius: 16px; background: #09090b; border: 1px solid #27272a; display: flex; flex-direction: column; gap: 26px;">
+
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <span style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px; color: #f4f4f5;">Escuro</span>
+        <span class="mono" style="font-size: 11px; color: #a1a1aa;">padrão</span>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 11px;">
+        <span class="mono" style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #f97316;">botões</span>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+          <span style="display: inline-flex; align-items: center; justify-content: center; height: 44px; padding: 0 20px; border-radius: 10px; background: #f97316; color: #09090b; font-weight: 700; font-size: 15px;">btn-primary</span>
+          <span style="display: inline-flex; align-items: center; justify-content: center; height: 44px; padding: 0 20px; border-radius: 10px; background: #1d1d21; border: 1px solid #27272a; color: #f4f4f5; font-weight: 600; font-size: 15px;">btn-secondary</span>
+          <span style="display: inline-flex; align-items: center; justify-content: center; height: 44px; padding: 0 16px; border-radius: 10px; color: #a1a1aa; font-weight: 600; font-size: 15px;">btn-ghost</span>
+        </div>
+        <p style="margin: 0; font-size: 12px; line-height: 1.5; color: #a1a1aa;">Altura mínima 44px — alvo de toque. Primário sempre com texto quase-preto.</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 11px;">
+        <span class="mono" style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #f97316;">field · input-row · unit</span>
+        <div style="display: flex; flex-direction: column; gap: 7px;">
+          <span style="font-size: 13px; font-weight: 600; color: #a1a1aa;">Peso</span>
+          <div style="display: flex; align-items: center; height: 48px; border-radius: 10px; background: #1d1d21; border: 1px solid #27272a; overflow: hidden;">
+            <span style="flex-grow: 1; padding: 0 14px; font-size: 15px; color: #f4f4f5;">72,4</span>
+            <span style="padding: 0 14px; height: 100%; display: flex; align-items: center; font-size: 13px; font-weight: 700; color: #a1a1aa; border-left: 1px solid #27272a;">kg</span>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 7px;">
+          <span style="font-size: 13px; font-weight: 600; color: #a1a1aa;">Altura</span>
+          <div style="display: flex; align-items: center; height: 48px; border-radius: 10px; background: #1d1d21; border: 1px solid #f97316; box-shadow: 0 0 0 3px rgba(249,115,22,0.18); overflow: hidden;">
+            <span style="flex-grow: 1; padding: 0 14px; font-size: 15px; color: #f4f4f5;">175</span>
+            <span style="padding: 0 14px; height: 100%; display: flex; align-items: center; font-size: 13px; font-weight: 700; color: #a1a1aa; border-left: 1px solid #27272a;">cm</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 11px;">
+        <span class="mono" style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #f97316;">segmented</span>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; padding: 5px; border-radius: 10px; background: #1d1d21;">
+          <span style="display: flex; align-items: center; justify-content: center; height: 38px; border-radius: 8px; background: #f97316; color: #09090b; font-weight: 700; font-size: 14px;">Masculino</span>
+          <span style="display: flex; align-items: center; justify-content: center; height: 38px; border-radius: 8px; color: #a1a1aa; font-weight: 700; font-size: 14px;">Feminino</span>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 11px;">
+        <span class="mono" style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #f97316;">eyebrow · stat</span>
+        <div style="display: inline-flex; align-self: flex-start; align-items: center; gap: 8px; padding: 6px 13px; border-radius: 100px; background: rgba(249,115,22,0.12);">
+          <span style="width: 6px; height: 6px; border-radius: 50%; background: #f97316;"></span>
+          <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #f97316;">Calculadora</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px;">
+          <div style="padding: 14px; border-radius: 12px; background: #161618; border: 1px solid #27272a; display: flex; flex-direction: column; gap: 4px;">
+            <span style="font-size: 12px; color: #a1a1aa;">Atual</span>
+            <span style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 24px; color: #f4f4f5;">72,4</span>
+          </div>
+          <div style="padding: 14px; border-radius: 12px; background: #161618; border: 1px solid #27272a; display: flex; flex-direction: column; gap: 4px;">
+            <span style="font-size: 12px; color: #a1a1aa;">30 dias</span>
+            <span style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 24px; color: #f97316;">−1,8</span>
+          </div>
+          <div style="padding: 14px; border-radius: 12px; background: #161618; border: 1px solid #27272a; display: flex; flex-direction: column; gap: 4px;">
+            <span style="font-size: 12px; color: #a1a1aa;">Registros</span>
+            <span style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 24px; color: #f4f4f5;">64</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 11px;">
+        <span class="mono" style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #f97316;">list-row</span>
+        <div style="border-radius: 12px; border: 1px solid #27272a; overflow: hidden;">
+          <div style="display: flex; align-items: center; gap: 12px; padding: 13px 15px; background: #161618;">
+            <span style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1;">
+              <span style="font-size: 15px; font-weight: 700; color: #f4f4f5;">72,4 kg</span>
+              <span style="font-size: 12px; color: #a1a1aa;">27 de agosto</span>
+            </span>
+            <span style="font-size: 13px; font-weight: 600; color: #f97316;">Editar</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; padding: 13px 15px; background: #161618; border-top: 1px solid #27272a;">
+            <span style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1;">
+              <span style="font-size: 15px; font-weight: 700; color: #f4f4f5;">73,1 kg</span>
+              <span style="font-size: 12px; color: #a1a1aa;">20 de agosto</span>
+            </span>
+            <span style="font-size: 13px; font-weight: 600; color: #f97316;">Editar</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="padding: 28px; border-radius: 16px; background: #fafafa; border: 1px solid #e4e4e7; display: flex; flex-direction: column; gap: 26px;">
+
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <span style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px; color: #18181b;">Claro</span>
+        <span class="mono" style="font-size: 11px; color: #52525b;">data-theme="light"</span>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 11px;">
+        <span class="mono" style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #c2410c;">botões</span>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+          <span style="display: inline-flex; align-items: center; justify-content: center; height: 44px; padding: 0 20px; border-radius: 10px; background: #f97316; color: #09090b; font-weight: 700; font-size: 15px;">btn-primary</span>
+          <span style="display: inline-flex; align-items: center; justify-content: center; height: 44px; padding: 0 20px; border-radius: 10px; background: #ffffff; border: 1px solid #e4e4e7; color: #18181b; font-weight: 600; font-size: 15px;">btn-secondary</span>
+          <span style="display: inline-flex; align-items: center; justify-content: center; height: 44px; padding: 0 16px; border-radius: 10px; color: #52525b; font-weight: 600; font-size: 15px;">btn-ghost</span>
+        </div>
+        <p style="margin: 0; font-size: 12px; line-height: 1.5; color: #52525b;">O primário é idêntico nos dois temas — é o que amarra a identidade.</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 11px;">
+        <span class="mono" style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #c2410c;">field · input-row · unit</span>
+        <div style="display: flex; flex-direction: column; gap: 7px;">
+          <span style="font-size: 13px; font-weight: 600; color: #52525b;">Peso</span>
+          <div style="display: flex; align-items: center; height: 48px; border-radius: 10px; background: #f4f4f5; border: 1px solid #e4e4e7; overflow: hidden;">
+            <span style="flex-grow: 1; padding: 0 14px; font-size: 15px; color: #18181b;">72,4</span>
+            <span style="padding: 0 14px; height: 100%; display: flex; align-items: center; font-size: 13px; font-weight: 700; color: #52525b; border-left: 1px solid #e4e4e7;">kg</span>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 7px;">
+          <span style="font-size: 13px; font-weight: 600; color: #52525b;">Altura</span>
+          <div style="display: flex; align-items: center; height: 48px; border-radius: 10px; background: #ffffff; border: 1px solid #f97316; box-shadow: 0 0 0 3px rgba(249,115,22,0.20); overflow: hidden;">
+            <span style="flex-grow: 1; padding: 0 14px; font-size: 15px; color: #18181b;">175</span>
+            <span style="padding: 0 14px; height: 100%; display: flex; align-items: center; font-size: 13px; font-weight: 700; color: #52525b; border-left: 1px solid #e4e4e7;">cm</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 11px;">
+        <span class="mono" style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #c2410c;">segmented</span>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; padding: 5px; border-radius: 10px; background: #f4f4f5;">
+          <span style="display: flex; align-items: center; justify-content: center; height: 38px; border-radius: 8px; background: #f97316; color: #09090b; font-weight: 700; font-size: 14px;">Masculino</span>
+          <span style="display: flex; align-items: center; justify-content: center; height: 38px; border-radius: 8px; color: #52525b; font-weight: 700; font-size: 14px;">Feminino</span>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 11px;">
+        <span class="mono" style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #c2410c;">eyebrow · stat</span>
+        <div style="display: inline-flex; align-self: flex-start; align-items: center; gap: 8px; padding: 6px 13px; border-radius: 100px; background: rgba(249,115,22,0.14);">
+          <span style="width: 6px; height: 6px; border-radius: 50%; background: #f97316;"></span>
+          <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #c2410c;">Calculadora</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px;">
+          <div style="padding: 14px; border-radius: 12px; background: #ffffff; border: 1px solid #e4e4e7; display: flex; flex-direction: column; gap: 4px;">
+            <span style="font-size: 12px; color: #52525b;">Atual</span>
+            <span style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 24px; color: #18181b;">72,4</span>
+          </div>
+          <div style="padding: 14px; border-radius: 12px; background: #ffffff; border: 1px solid #e4e4e7; display: flex; flex-direction: column; gap: 4px;">
+            <span style="font-size: 12px; color: #52525b;">30 dias</span>
+            <span style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 24px; color: #c2410c;">−1,8</span>
+          </div>
+          <div style="padding: 14px; border-radius: 12px; background: #ffffff; border: 1px solid #e4e4e7; display: flex; flex-direction: column; gap: 4px;">
+            <span style="font-size: 12px; color: #52525b;">Registros</span>
+            <span style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 24px; color: #18181b;">64</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 11px;">
+        <span class="mono" style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #c2410c;">list-row</span>
+        <div style="border-radius: 12px; border: 1px solid #e4e4e7; overflow: hidden;">
+          <div style="display: flex; align-items: center; gap: 12px; padding: 13px 15px; background: #ffffff;">
+            <span style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1;">
+              <span style="font-size: 15px; font-weight: 700; color: #18181b;">72,4 kg</span>
+              <span style="font-size: 12px; color: #52525b;">27 de agosto</span>
+            </span>
+            <span style="font-size: 13px; font-weight: 600; color: #c2410c;">Editar</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; padding: 13px 15px; background: #ffffff; border-top: 1px solid #e4e4e7;">
+            <span style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1;">
+              <span style="font-size: 15px; font-weight: 700; color: #18181b;">73,1 kg</span>
+              <span style="font-size: 12px; color: #52525b;">20 de agosto</span>
+            </span>
+            <span style="font-size: 13px; font-weight: 600; color: #c2410c;">Editar</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div style="padding: 22px 26px; border-radius: 16px; background: #161618; border: 1px solid rgba(249,115,22,0.45); display: flex; flex-direction: column; gap: 8px;">
+    <span style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px; color: #f97316;">A regra que muda o que já existe</span>
+    <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #f4f4f5; max-width: 92ch;">Texto sobre preenchimento laranja é <span class="mono" style="color: #f97316;">--on-accent</span> (#09090b), nunca branco. A Calculadora usa branco hoje no toggle de sexo — 2,8:1. Trocar por quase-preto leva para 7,1:1 e é a diferença mais visível desta repaginação.</p>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

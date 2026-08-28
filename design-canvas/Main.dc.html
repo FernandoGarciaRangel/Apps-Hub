@@ -1,0 +1,414 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Syne:wght@600;700;800&display=swap">
+  <style>
+    body {
+      margin: 0;
+      background: #09090b;
+      color: #f4f4f5;
+      font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: #f97316; }
+    a:hover { color: #fb923c; }
+    .mono { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; }
+  </style>
+</helmet>
+
+<div style="padding: 56px 48px 64px; display: flex; flex-direction: column; gap: 52px;">
+
+  <div style="display: flex; flex-direction: column; gap: 14px;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <span style="width: 26px; height: 1px; background: linear-gradient(90deg, #f97316, rgba(249,115,22,0));"></span>
+      <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #f97316;">Sistema de design</span>
+    </div>
+    <h1 style="margin: 0; font-family: 'Syne', system-ui, sans-serif; font-weight: 800; font-size: 46px; line-height: 1.05; letter-spacing: -0.02em; color: #f4f4f5;">Preto &amp; Laranja</h1>
+    <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #a1a1aa; max-width: 62ch;">Fundamentos compartilhados por Apps-Hub, Calculadora TMB e WeightChartS. Os três repos copiam estes tokens; nada é importado em runtime.</p>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 20px;">
+    <h2 style="margin: 0; font-family: 'Syne', system-ui, sans-serif; font-weight: 700; font-size: 22px; letter-spacing: -0.01em; color: #f4f4f5;">Paleta</h2>
+
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px;">
+
+      <div style="display: flex; flex-direction: column; gap: 4px; padding: 24px; border-radius: 16px; background: #161618; border: 1px solid #27272a;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 12px;">
+          <span style="font-family: 'Syne', system-ui, sans-serif; font-weight: 700; font-size: 15px; color: #f4f4f5;">Escuro</span>
+          <span class="mono" style="font-size: 11px; color: #a1a1aa;">:root</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 14px; padding: 7px 0;">
+          <span style="width: 38px; height: 38px; border-radius: 10px; background: #09090b; border: 1px solid #27272a; flex-shrink: 0;"></span>
+          <span style="display: flex; flex-direction: column; gap: 1px; flex-grow: 1; min-width: 0;">
+            <span class="mono" style="font-size: 13px; font-weight: 700; color: #f4f4f5;">--bg</span>
+            <span style="font-size: 12px; color: #a1a1aa;">fundo da página</span>
+          </span>
+          <span class="mono" style="font-size: 12px; color: #a1a1aa;">#09090b</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 14px; padding: 7px 0;">
+          <span style="width: 38px; height: 38px; border-radius: 10px; background: #161618; border: 1px solid #27272a; flex-shrink: 0;"></span>
+          <span style="display: flex; flex-direction: column; gap: 1px; flex-grow: 1; min-width: 0;">
+            <span class="mono" style="font-size: 13px; font-weight: 700; color: #f4f4f5;">--surface</span>
+            <span style="font-size: 12px; color: #a1a1aa;">card, painel</span>
+          </span>
+          <span class="mono" style="font-size: 12px; color: #a1a1aa;">#161618</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 14px; padding: 7px 0;">
+          <span style="width: 38px; height: 38px; border-radius: 10px; background: #1d1d21; border: 1px solid #27272a; flex-shrink: 0;"></span>
+          <span style="display: flex; flex-direction: column; gap: 1px; flex-grow: 1; min-width: 0;">
+            <span class="mono" style="font-size: 13px; font-weight: 700; color: #f4f4f5;">--surface-2</span>
+            <span style="font-size: 12px; color: #a1a1aa;">input, trilho de toggle</span>
+          </span>
+          <span class="mono" style="font-size: 12px; color: #a1a1aa;">#1d1d21</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 14px; padding: 7px 0;">
+          <span style="width: 38px; height: 38px; border-radius: 10px; background: #27272a; flex-shrink: 0;"></span>
+          <span style="display: flex; flex-direction: column; gap: 1px; flex-grow: 1; min-width: 0;">
+            <span class="mono" style="font-size: 13px; font-weight: 700; color: #f4f4f5;">--border</span>
+            <span style="font-size: 12px; color: #a1a1aa;">contorno em repouso</span>
+          </span>
+          <span class="mono" style="font-size: 12px; color: #a1a1aa;">#27272a</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 14px; padding: 7px 0;">
+          <span style="width: 38px; height: 38px; border-radius: 10px; background: #f4f4f5; flex-shrink: 0;"></span>
+          <span style="display: flex; flex-direction: column; gap: 1px; flex-grow: 1; min-width: 0;">
+            <span class="mono" style="font-size: 13px; font-weight: 700; color: #f4f4f5;">--text</span>
+            <span style="font-size: 12px; color: #a1a1aa;">texto principal</span>
+          </span>
+          <span class="mono" style="font-size: 12px; color: #a1a1aa;">#f4f4f5</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 14px; padding: 7px 0;">
+          <span style="width: 38px; height: 38px; border-radius: 10px; background: #a1a1aa; flex-shrink: 0;"></span>
+          <span style="display: flex; flex-direction: column; gap: 1px; flex-grow: 1; min-width: 0;">
+            <span class="mono" style="font-size: 13px; font-weight: 700; color: #f4f4f5;">--text-dim</span>
+            <span style="font-size: 12px; color: #a1a1aa;">apoio, label</span>
+          </span>
+          <span class="mono" style="font-size: 12px; color: #a1a1aa;">#a1a1aa</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 14px; padding: 7px 0;">
+          <span style="width: 38px; height: 38px; border-radius: 10px; background: #71717a; flex-shrink: 0;"></span>
+          <span style="display: flex; flex-direction: column; gap: 1px; flex-grow: 1; min-width: 0;">
+            <span class="mono" style="font-size: 13px; font-weight: 700; color: #f4f4f5;">--text-faint</span>
+            <span style="font-size: 12px; color: #a1a1aa;">3,5–4,1:1 conforme a superfície — não-texto</span>
+          </span>
+          <span class="mono" style="font-size: 12px; color: #a1a1aa;">#71717a</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 14px; padding: 7px 0;">
+          <span style="width: 38px; height: 38px; border-radius: 10px; background: #f97316; flex-shrink: 0;"></span>
+          <span style="display: flex; flex-direction: column; gap: 1px; flex-grow: 1; min-width: 0;">
+            <span class="mono" style="font-size: 13px; font-weight: 700; color: #f4f4f5;">--accent</span>
+            <span style="font-size: 12px; color: #a1a1aa;">preenchimento — igual nos 2 temas</span>
+          </span>
+          <span class="mono" style="font-size: 12px; color: #a1a1aa;">#f97316</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 14px; padding: 7px 0;">
+          <span style="width: 38px; height: 38px; border-radius: 10px; background: #fb923c; flex-shrink: 0;"></span>
+          <span style="display: flex; flex-direction: column; gap: 1px; flex-grow: 1; min-width: 0;">
+            <span class="mono" style="font-size: 13px; font-weight: 700; color: #f4f4f5;">--accent-soft</span>
+            <span style="font-size: 12px; color: #a1a1aa;">hover, ícone</span>
+          </span>
+          <span class="mono" style="font-size: 12px; color: #a1a1aa;">#fb923c</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 14px; padding: 7px 0;">
+          <span style="width: 38px; height: 38px; border-radius: 10px; background: #f97316; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 15px; color: #09090b;">Aa</span>
+          <span style="display: flex; flex-direction: column; gap: 1px; flex-grow: 1; min-width: 0;">
+            <span class="mono" style="font-size: 13px; font-weight: 700; color: #f4f4f5;">--on-accent</span>
+            <span style="font-size: 12px; color: #a1a1aa;">texto sobre o laranja</span>
+          </span>
+          <span class="mono" style="font-size: 12px; color: #a1a1aa;">#09090b</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 14px; padding: 7px 0;">
+          <span style="width: 38px; height: 38px; border-radius: 10px; background: #09090b; border: 1px solid #27272a; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 15px; color: #f97316;">Aa</span>
+          <span style="display: flex; flex-direction: column; gap: 1px; flex-grow: 1; min-width: 0;">
+            <span class="mono" style="font-size: 13px; font-weight: 700; color: #f4f4f5;">--accent-text</span>
+            <span style="font-size: 12px; color: #a1a1aa;">laranja usado como texto</span>
+          </span>
+          <span class="mono" style="font-size: 12px; color: #a1a1aa;">#f97316</span>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 4px; padding: 24px; border-radius: 16px; background: #fafafa; border: 1px solid #e4e4e7;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 12px;">
+          <span style="font-family: 'Syne', system-ui, sans-serif; font-weight: 700; font-size: 15px; color: #18181b;">Claro</span>
+          <span class="mono" style="font-size: 11px; color: #52525b;">:root[data-theme="light"]</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 14px; padding: 7px 0;">
+          <span style="width: 38px; height: 38px; border-radius: 10px; background: #fafafa; border: 1px solid #e4e4e7; flex-shrink: 0;"></span>
+          <span style="display: flex; flex-direction: column; gap: 1px; flex-grow: 1; min-width: 0;">
+            <span class="mono" style="font-size: 13px; font-weight: 700; color: #18181b;">--bg</span>
+            <span style="font-size: 12px; color: #52525b;">fundo da página</span>
+          </span>
+          <span class="mono" style="font-size: 12px; color: #52525b;">#fafafa</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 14px; padding: 7px 0;">
+          <span style="width: 38px; height: 38px; border-radius: 10px; background: #ffffff; border: 1px solid #e4e4e7; flex-shrink: 0;"></span>
+          <span style="display: flex; flex-direction: column; gap: 1px; flex-grow: 1; min-width: 0;">
+            <span class="mono" style="font-size: 13px; font-weight: 700; color: #18181b;">--surface</span>
+            <span style="font-size: 12px; color: #52525b;">card, painel</span>
+          </span>
+          <span class="mono" style="font-size: 12px; color: #52525b;">#fff / .75</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 14px; padding: 7px 0;">
+          <span style="width: 38px; height: 38px; border-radius: 10px; background: #f4f4f5; border: 1px solid #e4e4e7; flex-shrink: 0;"></span>
+          <span style="display: flex; flex-direction: column; gap: 1px; flex-grow: 1; min-width: 0;">
+            <span class="mono" style="font-size: 13px; font-weight: 700; color: #18181b;">--surface-2</span>
+            <span style="font-size: 12px; color: #52525b;">input, trilho de toggle</span>
+          </span>
+          <span class="mono" style="font-size: 12px; color: #52525b;">#f4f4f5</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 14px; padding: 7px 0;">
+          <span style="width: 38px; height: 38px; border-radius: 10px; background: #e4e4e7; flex-shrink: 0;"></span>
+          <span style="display: flex; flex-direction: column; gap: 1px; flex-grow: 1; min-width: 0;">
+            <span class="mono" style="font-size: 13px; font-weight: 700; color: #18181b;">--border</span>
+            <span style="font-size: 12px; color: #52525b;">contorno em repouso</span>
+          </span>
+          <span class="mono" style="font-size: 12px; color: #52525b;">#e4e4e7</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 14px; padding: 7px 0;">
+          <span style="width: 38px; height: 38px; border-radius: 10px; background: #18181b; flex-shrink: 0;"></span>
+          <span style="display: flex; flex-direction: column; gap: 1px; flex-grow: 1; min-width: 0;">
+            <span class="mono" style="font-size: 13px; font-weight: 700; color: #18181b;">--text</span>
+            <span style="font-size: 12px; color: #52525b;">texto principal</span>
+          </span>
+          <span class="mono" style="font-size: 12px; color: #52525b;">#18181b</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 14px; padding: 7px 0;">
+          <span style="width: 38px; height: 38px; border-radius: 10px; background: #52525b; flex-shrink: 0;"></span>
+          <span style="display: flex; flex-direction: column; gap: 1px; flex-grow: 1; min-width: 0;">
+            <span class="mono" style="font-size: 13px; font-weight: 700; color: #18181b;">--text-dim</span>
+            <span style="font-size: 12px; color: #52525b;">apoio, label</span>
+          </span>
+          <span class="mono" style="font-size: 12px; color: #52525b;">#52525b</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 14px; padding: 7px 0;">
+          <span style="width: 38px; height: 38px; border-radius: 10px; background: #71717a; flex-shrink: 0;"></span>
+          <span style="display: flex; flex-direction: column; gap: 1px; flex-grow: 1; min-width: 0;">
+            <span class="mono" style="font-size: 13px; font-weight: 700; color: #18181b;">--text-faint</span>
+            <span style="font-size: 12px; color: #52525b;">4,4–4,6:1 — mesma regra</span>
+          </span>
+          <span class="mono" style="font-size: 12px; color: #52525b;">#71717a</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 14px; padding: 7px 0;">
+          <span style="width: 38px; height: 38px; border-radius: 10px; background: #f97316; flex-shrink: 0;"></span>
+          <span style="display: flex; flex-direction: column; gap: 1px; flex-grow: 1; min-width: 0;">
+            <span class="mono" style="font-size: 13px; font-weight: 700; color: #18181b;">--accent</span>
+            <span style="font-size: 12px; color: #52525b;">preenchimento — não muda</span>
+          </span>
+          <span class="mono" style="font-size: 12px; color: #52525b;">#f97316</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 14px; padding: 7px 0;">
+          <span style="width: 38px; height: 38px; border-radius: 10px; background: #fb923c; flex-shrink: 0;"></span>
+          <span style="display: flex; flex-direction: column; gap: 1px; flex-grow: 1; min-width: 0;">
+            <span class="mono" style="font-size: 13px; font-weight: 700; color: #18181b;">--accent-soft</span>
+            <span style="font-size: 12px; color: #52525b;">hover, ícone</span>
+          </span>
+          <span class="mono" style="font-size: 12px; color: #52525b;">#fb923c</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 14px; padding: 7px 0;">
+          <span style="width: 38px; height: 38px; border-radius: 10px; background: #f97316; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 15px; color: #09090b;">Aa</span>
+          <span style="display: flex; flex-direction: column; gap: 1px; flex-grow: 1; min-width: 0;">
+            <span class="mono" style="font-size: 13px; font-weight: 700; color: #18181b;">--on-accent</span>
+            <span style="font-size: 12px; color: #52525b;">texto sobre o laranja</span>
+          </span>
+          <span class="mono" style="font-size: 12px; color: #52525b;">#09090b</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 14px; padding: 7px 0; border-radius: 10px; box-shadow: 0 0 0 2px rgba(194,65,12,0.35);">
+          <span style="width: 38px; height: 38px; border-radius: 10px; background: #fafafa; border: 1px solid #e4e4e7; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 15px; color: #c2410c;">Aa</span>
+          <span style="display: flex; flex-direction: column; gap: 1px; flex-grow: 1; min-width: 0;">
+            <span class="mono" style="font-size: 13px; font-weight: 700; color: #18181b;">--accent-text</span>
+            <span style="font-size: 12px; color: #c2410c; font-weight: 600;">o único token que troca de valor</span>
+          </span>
+          <span class="mono" style="font-size: 12px; color: #52525b;">#c2410c</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 16px;">
+    <h2 style="margin: 0; font-family: 'Syne', system-ui, sans-serif; font-weight: 700; font-size: 22px; letter-spacing: -0.01em; color: #f4f4f5;">Contraste medido</h2>
+    <p style="margin: 0 0 4px; font-size: 14px; line-height: 1.55; color: #a1a1aa; max-width: 74ch;">Razões WCAG calculadas, não estimadas. As duas linhas em laranja são as regras que mudam o visual atual dos apps.</p>
+
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+
+      <div style="display: flex; align-items: center; gap: 16px; padding: 12px 16px; border-radius: 12px; background: #161618; border: 1px solid #27272a;">
+        <span style="width: 132px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; height: 40px; border-radius: 8px; background: #09090b; border: 1px solid #27272a; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px; color: #f97316;">Texto</span>
+        <span class="mono" style="font-size: 12px; color: #a1a1aa; width: 190px; flex-shrink: 0;">#f97316 sobre #09090b</span>
+        <span style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 17px; color: #f4f4f5; width: 62px; flex-shrink: 0;">7,1:1</span>
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; padding: 4px 9px; border-radius: 100px; background: rgba(34,197,94,0.14); color: #4ade80; flex-shrink: 0;">AAA</span>
+        <span style="font-size: 13px; color: #a1a1aa; flex-grow: 1;">laranja como texto no escuro — mantém</span>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 16px; padding: 12px 16px; border-radius: 12px; background: #161618; border: 1px solid rgba(249,115,22,0.45);">
+        <span style="width: 132px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; height: 40px; border-radius: 8px; background: #fafafa; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px; color: #f97316;">Texto</span>
+        <span class="mono" style="font-size: 12px; color: #a1a1aa; width: 190px; flex-shrink: 0;">#f97316 sobre #fafafa</span>
+        <span style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 17px; color: #f4f4f5; width: 62px; flex-shrink: 0;">2,7:1</span>
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; padding: 4px 9px; border-radius: 100px; background: rgba(239,68,68,0.16); color: #f87171; flex-shrink: 0;">REPROVA</span>
+        <span style="font-size: 13px; color: #f4f4f5; flex-grow: 1;">nunca use o laranja puro como texto no claro</span>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 16px; padding: 12px 16px; border-radius: 12px; background: #161618; border: 1px solid #27272a;">
+        <span style="width: 132px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; height: 40px; border-radius: 8px; background: #fafafa; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px; color: #c2410c;">Texto</span>
+        <span class="mono" style="font-size: 12px; color: #a1a1aa; width: 190px; flex-shrink: 0;">#c2410c sobre #fafafa</span>
+        <span style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 17px; color: #f4f4f5; width: 62px; flex-shrink: 0;">5,0:1</span>
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; padding: 4px 9px; border-radius: 100px; background: rgba(34,197,94,0.14); color: #4ade80; flex-shrink: 0;">AA</span>
+        <span style="font-size: 13px; color: #a1a1aa; flex-grow: 1;">por isso <span class="mono" style="color: #f97316;">--accent-text</span> vira orange-700 no claro</span>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 16px; padding: 12px 16px; border-radius: 12px; background: #161618; border: 1px solid #27272a;">
+        <span style="width: 132px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; height: 40px; border-radius: 8px; background: #f97316; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px; color: #09090b;">Botão</span>
+        <span class="mono" style="font-size: 12px; color: #a1a1aa; width: 190px; flex-shrink: 0;">#09090b sobre #f97316</span>
+        <span style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 17px; color: #f4f4f5; width: 62px; flex-shrink: 0;">7,1:1</span>
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; padding: 4px 9px; border-radius: 100px; background: rgba(34,197,94,0.14); color: #4ade80; flex-shrink: 0;">AAA</span>
+        <span style="font-size: 13px; color: #a1a1aa; flex-grow: 1;">texto sobre preenchimento laranja</span>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 16px; padding: 12px 16px; border-radius: 12px; background: #161618; border: 1px solid rgba(249,115,22,0.45);">
+        <span style="width: 132px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; height: 40px; border-radius: 8px; background: #f97316; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px; color: #ffffff;">Botão</span>
+        <span class="mono" style="font-size: 12px; color: #a1a1aa; width: 190px; flex-shrink: 0;">#ffffff sobre #f97316</span>
+        <span style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 17px; color: #f4f4f5; width: 62px; flex-shrink: 0;">2,8:1</span>
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; padding: 4px 9px; border-radius: 100px; background: rgba(239,68,68,0.16); color: #f87171; flex-shrink: 0;">REPROVA</span>
+        <span style="font-size: 13px; color: #f4f4f5; flex-grow: 1;">é o que a Calculadora faz hoje no toggle ativo</span>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 16px; padding: 12px 16px; border-radius: 12px; background: #161618; border: 1px solid #27272a;">
+        <span style="width: 132px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; height: 40px; border-radius: 8px; background: #09090b; border: 1px solid #27272a; font-size: 13px; color: #71717a;">rodapé</span>
+        <span class="mono" style="font-size: 12px; color: #a1a1aa; width: 190px; flex-shrink: 0;">#71717a sobre #09090b</span>
+        <span style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 17px; color: #f4f4f5; width: 62px; flex-shrink: 0;">4,1:1</span>
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; padding: 4px 9px; border-radius: 100px; background: rgba(234,179,8,0.16); color: #facc15; flex-shrink: 0;">AA LARGE</span>
+        <span style="font-size: 13px; color: #a1a1aa; flex-grow: 1;">reprova em toda superfície escura: 3,8:1 sobre --surface, 3,5:1 sobre --surface-2</span>
+      </div>
+
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 20px;">
+    <h2 style="margin: 0; font-family: 'Syne', system-ui, sans-serif; font-weight: 700; font-size: 22px; letter-spacing: -0.01em; color: #f4f4f5;">Tipografia</h2>
+
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px;">
+      <div style="padding: 24px; border-radius: 16px; background: #161618; border: 1px solid #27272a; display: flex; flex-direction: column; gap: 10px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between;">
+          <span style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 15px; color: #f97316;">Syne</span>
+          <span class="mono" style="font-size: 11px; color: #a1a1aa;">--font-display · 600 700 800</span>
+        </div>
+        <div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 40px; line-height: 1.05; letter-spacing: -0.02em; color: #f4f4f5;">Aa Bb 0123</div>
+        <p style="margin: 0; font-size: 13px; line-height: 1.55; color: #a1a1aa;">Títulos, números grandes de resultado, nome dos cards. Nunca em bloco de texto corrido.</p>
+      </div>
+
+      <div style="padding: 24px; border-radius: 16px; background: #161618; border: 1px solid #27272a; display: flex; flex-direction: column; gap: 10px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between;">
+          <span style="font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 15px; color: #f97316;">Nunito</span>
+          <span class="mono" style="font-size: 11px; color: #a1a1aa;">--font-body · 400 600 700</span>
+        </div>
+        <div style="font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 40px; line-height: 1.05; color: #f4f4f5;">Aa Bb 0123</div>
+        <p style="margin: 0; font-size: 13px; line-height: 1.55; color: #a1a1aa;">Corpo, labels, botões, tudo que é interface. É a fonte padrão do <span class="mono" style="color: #f97316;">body</span>.</p>
+      </div>
+    </div>
+
+    <div style="padding: 24px 28px; border-radius: 16px; background: #161618; border: 1px solid #27272a; display: flex; flex-direction: column; gap: 2px;">
+      <div style="display: flex; align-items: baseline; gap: 20px; padding: 9px 0; border-bottom: 1px solid #27272a;">
+        <span class="mono" style="font-size: 12px; color: #f97316; width: 96px; flex-shrink: 0;">--step-4</span>
+        <span class="mono" style="font-size: 12px; color: #a1a1aa; width: 168px; flex-shrink: 0;">clamp(2.25rem, 8vw, 2.9rem)</span>
+        <span style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 42px; line-height: 1.1; color: #f4f4f5;">Título de tela</span>
+      </div>
+      <div style="display: flex; align-items: baseline; gap: 20px; padding: 9px 0; border-bottom: 1px solid #27272a;">
+        <span class="mono" style="font-size: 12px; color: #f97316; width: 96px; flex-shrink: 0;">--step-3</span>
+        <span class="mono" style="font-size: 12px; color: #a1a1aa; width: 168px; flex-shrink: 0;">1.875rem · 30px</span>
+        <span style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 30px; line-height: 1.15; color: #f4f4f5;">Número de resultado</span>
+      </div>
+      <div style="display: flex; align-items: baseline; gap: 20px; padding: 9px 0; border-bottom: 1px solid #27272a;">
+        <span class="mono" style="font-size: 12px; color: #f97316; width: 96px; flex-shrink: 0;">--step-2</span>
+        <span class="mono" style="font-size: 12px; color: #a1a1aa; width: 168px; flex-shrink: 0;">1.375rem · 22px</span>
+        <span style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 22px; color: #f4f4f5;">Título de seção</span>
+      </div>
+      <div style="display: flex; align-items: baseline; gap: 20px; padding: 9px 0; border-bottom: 1px solid #27272a;">
+        <span class="mono" style="font-size: 12px; color: #f97316; width: 96px; flex-shrink: 0;">--step-1</span>
+        <span class="mono" style="font-size: 12px; color: #a1a1aa; width: 168px; flex-shrink: 0;">1.0625rem · 17px</span>
+        <span style="font-size: 17px; font-weight: 700; color: #f4f4f5;">Título de card</span>
+      </div>
+      <div style="display: flex; align-items: baseline; gap: 20px; padding: 9px 0; border-bottom: 1px solid #27272a;">
+        <span class="mono" style="font-size: 12px; color: #f97316; width: 96px; flex-shrink: 0;">--step-0</span>
+        <span class="mono" style="font-size: 12px; color: #a1a1aa; width: 168px; flex-shrink: 0;">0.9375rem · 15px</span>
+        <span style="font-size: 15px; color: #f4f4f5;">Corpo de texto e botões — a base da interface</span>
+      </div>
+      <div style="display: flex; align-items: baseline; gap: 20px; padding: 9px 0;">
+        <span class="mono" style="font-size: 12px; color: #f97316; width: 96px; flex-shrink: 0;">--step--1</span>
+        <span class="mono" style="font-size: 12px; color: #a1a1aa; width: 168px; flex-shrink: 0;">0.8125rem · 13px</span>
+        <span style="font-size: 13px; color: #a1a1aa;">Label, unidade, metadado — piso do tamanho</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 20px;">
+    <h2 style="margin: 0; font-family: 'Syne', system-ui, sans-serif; font-weight: 700; font-size: 22px; letter-spacing: -0.01em; color: #f4f4f5;">Forma, elevação e foco</h2>
+
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px;">
+
+      <div style="padding: 24px; border-radius: 16px; background: #161618; border: 1px solid #27272a; display: flex; flex-direction: column; gap: 16px;">
+        <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #f97316;">Raios</span>
+        <div style="display: flex; align-items: flex-end; gap: 14px;">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 7px;">
+            <span style="width: 56px; height: 56px; border-radius: 16px; background: #1d1d21; border: 1px solid #27272a;"></span>
+            <span class="mono" style="font-size: 11px; color: #a1a1aa;">1rem</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 7px;">
+            <span style="width: 46px; height: 46px; border-radius: 10px; background: #1d1d21; border: 1px solid #27272a;"></span>
+            <span class="mono" style="font-size: 11px; color: #a1a1aa;">.625rem</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 7px;">
+            <span style="width: 38px; height: 38px; border-radius: 8px; background: #1d1d21; border: 1px solid #27272a;"></span>
+            <span class="mono" style="font-size: 11px; color: #a1a1aa;">.5rem</span>
+          </div>
+        </div>
+        <p style="margin: 0; font-size: 12px; line-height: 1.5; color: #a1a1aa;">Card usa o maior; botão e input o médio; chip e ícone o menor.</p>
+      </div>
+
+      <div style="padding: 24px; border-radius: 16px; background: #161618; border: 1px solid #27272a; display: flex; flex-direction: column; gap: 16px;">
+        <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #f97316;">Brilho de acento</span>
+        <div style="height: 62px; border-radius: 12px; background: #1d1d21; border: 1px solid rgba(249,115,22,0.45); box-shadow: 0 14px 40px -20px rgba(249,115,22,0.18), 0 10px 30px -22px rgba(0,0,0,0.75);"></div>
+        <p style="margin: 0; font-size: 12px; line-height: 1.5; color: #a1a1aa;">Elevação vem do brilho laranja, não de sombra preta pesada. No claro a opacidade cai de .18 para .10.</p>
+      </div>
+
+      <div style="padding: 24px; border-radius: 16px; background: #161618; border: 1px solid #27272a; display: flex; flex-direction: column; gap: 16px;">
+        <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #f97316;">Foco</span>
+        <div style="display: flex; align-items: center; justify-content: center; height: 62px;">
+          <span style="display: inline-flex; align-items: center; justify-content: center; height: 42px; padding: 0 20px; border-radius: 10px; background: #f97316; color: #09090b; font-weight: 700; font-size: 15px; outline: 2px solid #f97316; outline-offset: 3px;">Adicionar</span>
+        </div>
+        <p style="margin: 0; font-size: 12px; line-height: 1.5; color: #a1a1aa;"><span class="mono" style="color: #f97316;">outline: 2px solid var(--accent)</span> com offset 3px. Igual nos três apps, sem exceção.</p>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>
