@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Gerador do og.png</title>
+<!--
+  Fonte da imagem social /og.png (1200x630). NÃO é deployado — mora dentro de
+  design-canvas/, que está no .vercelignore. O driver serve o repo inteiro em
+  localhost, então dá para fotografá-lo:
+
+    OUT_DIR=. node .claude/skills/run-apps-hub/driver.mjs repl
+    size 1200 630
+    goto /design-canvas/og/og.html
+    sleep 2500          # esperar Syne/Nunito carregarem
+    shot og.png
+    quit
+
+  Hex solto aqui é permitido: isto é design source, como os outros .dc.html.
+  A imagem é sempre no tema escuro — scraper de rede social não tem tema.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    background: #09090b;
+  }
+
+  .canvas {
+    position: relative;
+    width: 1200px;
+    height: 630px;
+    padding: 72px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Nunito', system-ui, sans-serif;
+    color: #f4f4f5;
+  }
+
+  /* Mesmo empilhamento do .bg-glow do hub: brilho quente + grade de pontos. */
+  .glow {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 55% at 12% -10%, rgba(249, 115, 22, 0.30), transparent 62%),
+      radial-gradient(ellipse 50% 45% at 95% 108%, rgba(249, 115, 22, 0.14), transparent 58%);
+  }
+
+  .grid {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.035) 1.4px, transparent 1.4px);
+    background-size: 26px 26px;
+    -webkit-mask-image: radial-gradient(ellipse 85% 75% at 30% 40%, #000 25%, transparent 78%);
+    mask-image: radial-gradient(ellipse 85% 75% at 30% 40%, #000 25%, transparent 78%);
+  }
+
+  .inner { position: relative; z-index: 1; }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 26px;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #f97316;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 44px;
+    height: 2px;
+    background: linear-gradient(90deg, currentColor, transparent);
+  }
+
+  h1 {
+    font-family: 'Syne', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 92px;
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    background: linear-gradient(180deg, #ffffff 0%, #cfcfd4 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .lede {
+    margin-top: 22px;
+    max-width: 760px;
+    font-size: 27px;
+    line-height: 1.5;
+    color: #a1a1aa;
+  }
+
+  .pills {
+    display: flex;
+    gap: 14px;
+    margin-top: 46px;
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    padding: 14px 22px 14px 16px;
+    border: 1px solid #27272a;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #1d1d21, #161618);
+    font-size: 22px;
+    font-weight: 700;
+    color: #f4f4f5;
+  }
+
+  .pill svg {
+    width: 24px;
+    height: 24px;
+    color: #f97316;
+  }
+
+  /* Marca no canto: quadrado laranja com o glifo em quase-preto.
+     --on-accent, nunca branco: branco sobre #f97316 dá 2,8:1. */
+  .mark {
+    position: absolute;
+    top: 72px;
+    right: 80px;
+    width: 96px;
+    height: 96px;
+    border-radius: 26px;
+    background: #f97316;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 24px 60px -18px rgba(249, 115, 22, 0.55);
+  }
+
+  .mark svg { width: 58px; height: 58px; color: #09090b; }
+
+  .host {
+    position: absolute;
+    bottom: 62px;
+    right: 80px;
+    font-size: 21px;
+    font-weight: 600;
+    color: #71717a;
+  }
+</style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="glow"></div>
+    <div class="grid"></div>
+
+    <div class="mark">
+      <svg viewBox="0 0 32 32" fill="none">
+        <path d="M5 23 12.5 14 18 19.5 27 7" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <div class="inner">
+      <p class="eyebrow">Fernando Garcia Rangel</p>
+      <h1>Ferramentas</h1>
+      <p class="lede">Peso, calorias e gasto energético — três ferramentas gratuitas que rodam direto no navegador.</p>
+
+      <div class="pills">
+        <span class="pill">
+          <svg viewBox="0 0 32 32" fill="none">
+            <path d="M4 22 L11 14 L16 19 L28 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="28" cy="6" r="2.5" fill="currentColor"/>
+          </svg>
+          WeightChartS
+        </span>
+        <span class="pill">
+          <svg viewBox="0 0 32 32" fill="none">
+            <path d="M6 10h20M6 10c0 7 4 10 10 10s10-3 10-10M16 20v6M11 26h10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Refeição Livre
+        </span>
+        <span class="pill">
+          <svg viewBox="0 0 32 32" fill="none">
+            <path d="M16 5c-4 5-8 8-8 14a8 8 0 0 0 16 0c0-3-1.5-5-3-6.5.3 2-.5 3.5-2 4-1-2.5.5-5-3-8.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+          Calculadora TMB
+        </span>
+      </div>
+    </div>
+
+    <p class="host">apps-hub-beta.vercel.app</p>
+  </div>
+</body>
+</html>

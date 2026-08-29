@@ -248,10 +248,15 @@ body {
   gap: 0.22rem;
 }
 
+/* h2 desde a virada de SEO: o nome do app agora e um titulo de verdade na
+   hierarquia do documento, nao um span. Reset de margin/line-height porque o
+   default do h2 do browser abriria o card e mudaria o ritmo da lista. */
 .entry-title {
+  margin: 0;
   font-family: var(--font-display);
   font-weight: 700;
   font-size: var(--step-1);
+  line-height: 1.25;
   color: var(--text);
 }
 
@@ -325,7 +330,8 @@ body {
 .intro { animation-delay: 0.02s; }
 .entry:nth-child(1) { animation-delay: 0.12s; }
 .entry:nth-child(2) { animation-delay: 0.2s; }
-.site-footer { animation-delay: 0.3s; }
+.entry:nth-child(3) { animation-delay: 0.28s; }
+.site-footer { animation-delay: 0.36s; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
