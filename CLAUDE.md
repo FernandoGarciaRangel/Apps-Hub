@@ -1,8 +1,9 @@
 # Apps-Hub
 
-Página estática (`index.html` + `tokens.css` + `styles.css`, sem build, sem dependências npm) com dois links para apps publicados em repositórios separados:
+Página estática (`index.html` + `tokens.css` + `styles.css`, sem build, sem dependências npm) com links para apps publicados em repositórios separados:
 
 - WeightChartS → https://weight-charts.vercel.app/
+- Refeição Livre → https://refeicao-livre.vercel.app/
 - Calculadora TMB → https://calculadora-tmb-five.vercel.app/
 
 Deploy: Vercel, projeto estático, root = `index.html`. Sem variáveis de ambiente.
@@ -15,11 +16,11 @@ Se essa URL sumir daqui de novo, ela está no campo `homepage` do repositório n
 curl -s https://api.github.com/repos/FernandoGarciaRangel/Apps-Hub | grep homepage
 ```
 
-O mesmo vale para os outros dois repos. Não há `.vercel/project.json` local em nenhum deles — nunca rodaram `vercel link` aqui.
+O mesmo vale para os outros repos. Não há `.vercel/project.json` local em nenhum deles — nunca rodaram `vercel link` aqui.
 
 ## Sistema de design
 
-`tokens.css` é uma **cópia** dos tokens compartilhados pelos três apps do workspace (preto + laranja, temas escuro e claro). A spec canônica é o `DESIGN-SYSTEM.md` **deste repo**, que serve os três — como cada um tem deploy Vercel separado, não existe CSS compartilhado em runtime; cada repo carrega a sua cópia. Ao mudar um token, mude na spec e nos três repos.
+`tokens.css` é uma **cópia** dos tokens compartilhados pelos apps do workspace (preto + laranja, temas escuro e claro). A spec canônica é o `DESIGN-SYSTEM.md` **deste repo**, que serve todos — como cada um tem deploy Vercel separado, não existe CSS compartilhado em runtime; cada repo carrega a sua cópia. Ao mudar um token, mude na spec e em todos os repos.
 
 `DESIGN-SYSTEM.md` e `design-canvas/` estão no `.vercelignore`: versionados aqui, mas fora do deploy. O hub é servido da raiz, então sem essa exclusão eles iriam para o domínio público. Se mexer no `vercel.json`, não derrube isso.
 
@@ -56,6 +57,6 @@ Cuidado ao testar caminhos: o `vercel.json` tem `cleanUrls: true`, então `.html
 
 ## Decisão: não unificar domínio com WeightChartS e Calculadora TMB
 
-Avaliamos servir os três sob um domínio único via rewrite/proxy do Vercel (`/peso/*` → `weight-charts.vercel.app/*` etc.) e descartamos por enquanto. Motivo: o WeightChartS registra o service worker com path absoluto (`navigator.serviceWorker.register('/sw.js')`, em `index.html`). Sob um domínio compartilhado, isso tentaria registrar em `/sw.js` da raiz do domínio — não no subpath — o que gera 404 ou, pior, um service worker de escopo `/` controlando as três páginas (hub incluído).
+Avaliamos servir todos sob um domínio único via rewrite/proxy do Vercel (`/peso/*` → `weight-charts.vercel.app/*` etc.) e descartamos por enquanto. Motivo: o WeightChartS registra o service worker com path absoluto (`navigator.serviceWorker.register('/sw.js')`, em `index.html`). Sob um domínio compartilhado, isso tentaria registrar em `/sw.js` da raiz do domínio — não no subpath — o que gera 404 ou, pior, um service worker de escopo `/` controlando todas as páginas (hub incluído).
 
-Antes de tentar essa unificação de novo, o registro do SW no WeightChartS precisa virar relativo ao path atual (ou condicional por `location.pathname`). Até lá, este hub continua sendo só dois links externos — não é uma limitação técnica desta pasta, é uma decisão tomada sabendo do trade-off.
+Antes de tentar essa unificação de novo, o registro do SW no WeightChartS precisa virar relativo ao path atual (ou condicional por `location.pathname`). Até lá, este hub continua sendo só links externos — não é uma limitação técnica desta pasta, é uma decisão tomada sabendo do trade-off.

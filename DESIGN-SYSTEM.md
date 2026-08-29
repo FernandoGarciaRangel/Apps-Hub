@@ -1,11 +1,11 @@
 # Sistema de design — Preto & Laranja
 
-Fonte da verdade para os três apps do workspace: **Apps-Hub**, **Calculadora TMB** e **WeightChartS**.
+Fonte da verdade para os quatro apps do workspace: **Apps-Hub**, **Calculadora TMB**, **Refeição Livre** e **WeightChartS**.
 
 Canvas visual: https://claude.ai/code/artifact/88c7c1c9-02de-491c-a929-16c941029fd9
 Fontes do canvas: `design-canvas/*.dc.html` (nesta mesma pasta).
 
-> Os três são repositórios Git independentes com deploys Vercel separados. **Não existe CSS compartilhado em runtime** — cada repo carrega a sua própria cópia de `tokens.css`. Este arquivo é a referência que mantém as cópias iguais; quando um token mudar, muda aqui primeiro e depois nos três.
+> Os quatro são repositórios Git independentes com deploys Vercel separados. **Não existe CSS compartilhado em runtime** — cada repo carrega a sua própria cópia de `tokens.css`. Este arquivo é a referência que mantém as cópias iguais; quando um token mudar, muda aqui primeiro e depois nos quatro.
 
 > **Onde este arquivo vive.** No repo **Apps-Hub**, junto de `design-canvas/`. Ficava solto na raiz do workspace, que não é repositório git — a spec e os artboards não tinham histórico nem backup. O `.vercelignore` do hub exclui os dois do deploy: eles são versionados, não publicados. De outro repo, o caminho é `../Apps-Hub/DESIGN-SYSTEM.md`.
 
@@ -23,7 +23,7 @@ Se uma tela que você precisa não estiver desenhada, peça o artboard em vez de
 
 Copie este bloco para o `tokens.css` do repo, sem alterar valores.
 
-> **Nunca ponha caminho relativo dentro do `tokens.css`.** O arquivo é byte-idêntico nos três repos, mas o layout de cada um é diferente — no Apps-Hub ele fica na raiz, no WeightChartS em `src/css/`. Um `../DESIGN-SYSTEM.md` que resolve certo num resolve errado no outro, e a byte-identidade garante que o texto errado seja copiado junto. Foi o que aconteceu: o caminho apontava para `WeightChartS/src/DESIGN-SYSTEM.md`, que nunca existiu. Referências dentro deste arquivo citam repo e nome, nunca caminho.
+> **Nunca ponha caminho relativo dentro do `tokens.css`.** O arquivo é byte-idêntico em todos os repos, mas o layout de cada um é diferente — no Apps-Hub ele fica na raiz, no WeightChartS em `src/css/`. Um `../DESIGN-SYSTEM.md` que resolve certo num resolve errado no outro, e a byte-identidade garante que o texto errado seja copiado junto. Foi o que aconteceu: o caminho apontava para `WeightChartS/src/DESIGN-SYSTEM.md`, que nunca existiu. Referências dentro deste arquivo citam repo e nome, nunca caminho.
 
 ```css
 :root {
@@ -202,7 +202,7 @@ Escala: `--step--1` (13px) é o piso — nada de texto abaixo disso.
 
 ## 4. Componentes
 
-Mesmos nomes e mesmo comportamento nos três apps.
+Mesmos nomes e mesmo comportamento em todos os apps.
 
 | Classe | Anatomia |
 |---|---|
@@ -222,7 +222,7 @@ Alvos de toque: **mínimo 44px** de altura em qualquer controle.
 
 ### `btn-back` — a volta para o portal
 
-Os três apps têm deploys separados, e o hub aponta **só de ida**: abre WeightChartS e Calculadora com `target="_blank"` e fica na aba de trás. Isso mascara o problema no navegador, mas o beco sem saída é real em três situações:
+Os apps têm deploys separados, e o hub aponta **só de ida**: abre cada um com `target="_blank"` e fica na aba de trás. Isso mascara o problema no navegador, mas o beco sem saída é real em três situações:
 
 - **PWA instalado** — o WeightChartS é `display: standalone`; instalado, não existe aba de hub nenhuma
 - acesso direto por URL ou favorito
@@ -259,15 +259,16 @@ Se o domínio do hub mudar, são dois arquivos a atualizar. Está registrado em 
 
 Com a URL de produção fixa no HTML, clicar em "voltar" durante o desenvolvimento **ejeta você do localhost direto para o site publicado**. Por isso os apps reescrevem o destino quando estão em `localhost`.
 
-Portas fixas — os três precisam rodar ao mesmo tempo para essa navegação existir:
+Portas fixas — todos precisam rodar ao mesmo tempo para essa navegação existir:
 
 | App | Porta | Como sobe |
 |---|---|---|
 | Apps-Hub | **8080** | `npx serve . -l 8080` |
 | Calculadora TMB | **8081** | `npx serve . -l 8081` |
+| Refeição Livre | **8082** | `npx serve . -l 8082` |
 | WeightChartS | **3000** | `npm run dev` |
 
-Antes disso os três colidiam: o WeightChartS usa 3000 e os outros dois diziam `npx serve .`, cujo default também é 3000.
+Antes disso eles colidiam: o WeightChartS usa 3000 e os outros diziam `npx serve .`, cujo default também é 3000.
 
 O script vai no fim do `<body>`:
 
@@ -288,7 +289,7 @@ A direção importa: **o HTML carrega a URL de produção e o dev reescreve**, n
 
 Se o hub não estiver de pé, o clique dá erro de conexão. É o sinal certo ("suba o hub"), e melhor que pular silenciosamente para produção.
 
-### Foco — igual nos três, sem exceção
+### Foco — igual em todos, sem exceção
 
 ```css
 :focus-visible {
