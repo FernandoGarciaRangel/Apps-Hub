@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Gerador dos ícones PNG</title>
+<!--
+  Fonte de /apple-touch-icon.png (180x180) e /icon-512.png (512x512).
+  Não é deployado — mora em design-canvas/, que está no .vercelignore.
+
+    OUT_DIR=. node .claude/skills/run-apps-hub/driver.mjs repl
+    size 180 180
+    goto /design-canvas/og/icon.html
+    shot apple-touch-icon.png
+    size 512 512
+    goto /design-canvas/og/icon.html
+    shot icon-512.png
+    quit
+
+  Laranja sangrando até a borda de propósito: o mesmo arquivo serve de ícone
+  normal e de maskable. O Android recorta um círculo de ~80% do lado; com o
+  fundo cheio, só o glifo precisa caber na zona segura — daí ele ocupar 46%
+  do lado e ficar centrado.
+
+  Glifo em #09090b (--on-accent), nunca branco: branco sobre #f97316 dá 2,8:1.
+-->
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #f97316;
+  }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  svg {
+    width: 46%;
+    height: 46%;
+    color: #09090b;
+    overflow: visible;
+  }
+</style>
+</head>
+<body>
+  <!-- Path deslocado do original do favicon: com o circulo na ponta, a massa
+       do glifo sobe e vai para a direita, e ele fica visivelmente fora do
+       centro num icone quadrado. Estas coordenadas centram a caixa real do
+       tracado (incluindo metade do stroke e o raio do circulo) em 16,16. -->
+  <svg viewBox="0 0 32 32" fill="none">
+    <path d="M4.5 25 12 16 17.5 21.5 26.5 9" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="26.5" cy="9" r="2.6" fill="currentColor"/>
+  </svg>
+</body>
+</html>

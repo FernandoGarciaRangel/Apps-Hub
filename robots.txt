@@ -1,0 +1,60 @@
+# https://apps-hub-beta.vercel.app/robots.txt
+# Portal de ferramentas de Fernando Garcia Rangel.
+# Ao trocar de dominio, atualize a linha Sitemap abaixo.
+
+User-agent: *
+Allow: /
+
+# Documentacao interna do repo. Fica fora do deploy pelo .vercelignore,
+# mas a regra permanece como segunda barreira caso a exclusao caia.
+Disallow: /CLAUDE.md
+Disallow: /Readme.md
+Disallow: /DESIGN-SYSTEM.md
+Disallow: /design-canvas/
+
+# Rastreadores de IA sao bem-vindos: o objetivo aqui e ser citado, nao
+# escondido. Declarados um a um de proposito — o "User-agent: *" acima ja
+# permitiria, mas varios desses agentes so respeitam a entrada nominal.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+Sitemap: https://apps-hub-beta.vercel.app/sitemap.xml

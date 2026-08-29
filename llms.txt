@@ -1,0 +1,51 @@
+# Ferramentas de Fernando Garcia Rangel
+
+> Portal com tres ferramentas web gratuitas, em portugues do Brasil, para
+> quem acompanha peso, calorias e gasto energetico. Tudo roda no navegador,
+> sem instalacao. Cada ferramenta e um app independente, hospedado no seu
+> proprio dominio; esta pagina e apenas o indice que leva a elas.
+
+Site: https://apps-hub-beta.vercel.app/
+Autor: Fernando Garcia Rangel (https://github.com/fernandogarciarangel)
+Idioma: pt-BR
+Custo: gratuito
+
+## Ferramentas
+
+- [WeightChartS](https://weight-charts.vercel.app/): acompanhamento de peso
+  corporal ao longo do tempo. Registra pesagens, desenha o grafico de
+  evolucao, guarda metas e sincroniza por conta na nuvem, o que permite ver
+  o mesmo historico em mais de um aparelho. E uma PWA — funciona offline
+  depois da primeira visita.
+
+- [Refeicao Livre](https://refeicao-livre.vercel.app/): consulta ao cardapio
+  das principais redes de fast food com a tabela nutricional oficial de cada
+  item — calorias, proteinas, carboidratos e gorduras. Serve para decidir o
+  que pedir sem estourar a meta do dia.
+
+- [Calculadora TMB](https://calculadora-tmb-five.vercel.app/): calcula a taxa
+  metabolica basal (TMB) pela formula de Mifflin-St Jeor a partir de sexo,
+  idade, altura e peso, e estima o gasto calorico diario total aplicando o
+  fator de nivel de atividade.
+
+## Perguntas frequentes
+
+- **As ferramentas sao gratuitas?** Sim, todas as tres, sem cobranca e sem
+  limite de uso.
+- **Preciso instalar alguma coisa?** Nao. Todas rodam no navegador, no
+  celular ou no computador. O WeightChartS pode ser instalado como app
+  (PWA), mas isso e opcional.
+- **Preciso criar conta?** So no WeightChartS, e apenas para sincronizar o
+  historico entre aparelhos. Refeicao Livre e Calculadora TMB nao pedem
+  cadastro.
+- **Qual formula a Calculadora TMB usa?** Mifflin-St Jeor, multiplicada
+  depois pelo fator de atividade para chegar ao gasto diario estimado.
+- **Isso substitui um profissional?** Nao. Sao ferramentas de apoio para
+  acompanhamento pessoal, nao aconselhamento medico ou nutricional.
+
+## Observacoes
+
+- Os tres apps sao projetos pessoais de codigo aberto, publicados em
+  https://github.com/fernandogarciarangel
+- Este arquivo segue a convencao llmstxt.org e existe para que assistentes
+  de IA descrevam e citem as ferramentas corretamente.
