@@ -284,6 +284,65 @@ body {
   transform: translate(3px, -3px);
 }
 
+/* —— Grupo de ofertas —— */
+
+.community {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  text-align: center;
+}
+
+/* Texto sobre laranja é --on-accent, nunca branco (branco dá 2,8:1). */
+.btn-telegram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.8rem 1.4rem;
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: var(--on-accent);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--step-1);
+  text-decoration: none;
+  box-shadow: 0 10px 30px -14px var(--accent-glow);
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-telegram:hover,
+.btn-telegram:focus-visible {
+  background: var(--accent-soft);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px -14px var(--accent-glow);
+}
+
+.btn-telegram:active {
+  transform: translateY(0) scale(0.99);
+}
+
+.btn-telegram:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.btn-telegram svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  flex-shrink: 0;
+}
+
+.community-note {
+  margin: 0;
+  font-size: var(--step--1);
+  color: var(--text-dim);
+}
+
 /* —— Rodapé —— */
 
 .site-footer {
@@ -323,6 +382,7 @@ body {
 
 .intro,
 .entry,
+.community,
 .site-footer {
   animation: rise 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) backwards;
 }
@@ -331,7 +391,8 @@ body {
 .entry:nth-child(1) { animation-delay: 0.12s; }
 .entry:nth-child(2) { animation-delay: 0.2s; }
 .entry:nth-child(3) { animation-delay: 0.28s; }
-.site-footer { animation-delay: 0.36s; }
+.community { animation-delay: 0.36s; }
+.site-footer { animation-delay: 0.44s; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -339,7 +400,9 @@ body {
     transition: none !important;
   }
   .entry:hover,
-  .entry:focus-visible {
+  .entry:focus-visible,
+  .btn-telegram:hover,
+  .btn-telegram:focus-visible {
     transform: none;
   }
 }
