@@ -19,3 +19,6 @@ Readme.md
 
 # Ferramental de agente (driver headless + SKILL.md). Nao e conteudo do site.
 .claude/
+
+# Testes locais de regressão de domínio.
+tests/

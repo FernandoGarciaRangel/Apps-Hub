@@ -1,4 +1,4 @@
-# https://apps-hub-beta.vercel.app/robots.txt
+# https://apps.garciadev.tech/robots.txt
 # Portal de ferramentas de Fernando Garcia Rangel.
 # Ao trocar de dominio, atualize a linha Sitemap abaixo.
 
@@ -57,4 +57,4 @@ Allow: /
 User-agent: meta-externalagent
 Allow: /
 
-Sitemap: https://apps-hub-beta.vercel.app/sitemap.xml
+Sitemap: https://apps.garciadev.tech/sitemap.xml

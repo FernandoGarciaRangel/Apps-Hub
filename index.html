@@ -6,11 +6,11 @@
 <meta name="theme-color" content="#09090b">
 
 <!-- ————————————————————————————————————————————————————————————————
-     URL BASE DO SITE: https://apps-hub-beta.vercel.app
+     URL BASE DO SITE: https://apps.garciadev.tech
      Sem build, então não há como interpolar variável. Toda URL absoluta
      deste arquivo (canonical, og:url, og:image, JSON-LD) usa esse host e
      está reunida aqui de propósito: trocar de domínio é um find-and-replace
-     de "https://apps-hub-beta.vercel.app" neste arquivo, em robots.txt e em
+     de "https://apps.garciadev.tech" neste arquivo, em robots.txt e em
      sitemap.xml. Nenhum outro arquivo do repo tem URL absoluta própria.
      ———————————————————————————————————————————————————————————————— -->
 
@@ -18,16 +18,16 @@
 <meta name="description" content="Três ferramentas gratuitas em português: gráfico de evolução de peso, calculadora de TMB (Mifflin–St Jeor) e tabela nutricional do fast food.">
 <meta name="author" content="Fernando Garcia Rangel">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-<link rel="canonical" href="https://apps-hub-beta.vercel.app/">
+<link rel="canonical" href="https://apps.garciadev.tech/">
 
 <!-- Open Graph (WhatsApp, Facebook, LinkedIn, Telegram, Discord) -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ferramentas de Fernando Garcia Rangel">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:url" content="https://apps-hub-beta.vercel.app/">
+<meta property="og:url" content="https://apps.garciadev.tech/">
 <meta property="og:title" content="Ferramentas grátis de dieta e peso">
 <meta property="og:description" content="Gráfico de evolução de peso, calculadora de TMB (Mifflin–St Jeor) e tabela nutricional do fast food. Tudo no navegador, de graça.">
-<meta property="og:image" content="https://apps-hub-beta.vercel.app/og.png">
+<meta property="og:image" content="https://apps.garciadev.tech/og.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -37,7 +37,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Ferramentas grátis de dieta e peso">
 <meta name="twitter:description" content="Gráfico de evolução de peso, calculadora de TMB (Mifflin–St Jeor) e tabela nutricional do fast food.">
-<meta name="twitter:image" content="https://apps-hub-beta.vercel.app/og.png">
+<meta name="twitter:image" content="https://apps.garciadev.tech/og.png">
 
 <!-- Ícones: arquivos de verdade, não data-URI. Scraper de rede social e
      crawler não resolvem SVG inline em href de forma confiável. -->
@@ -73,27 +73,27 @@
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": "https://apps-hub-beta.vercel.app/#website",
-      "url": "https://apps-hub-beta.vercel.app/",
+      "@id": "https://apps.garciadev.tech/#website",
+      "url": "https://apps.garciadev.tech/",
       "name": "Ferramentas de Fernando Garcia Rangel",
       "description": "Índice das ferramentas gratuitas de peso, nutrição e gasto calórico feitas por Fernando Garcia Rangel.",
       "inLanguage": "pt-BR",
-      "publisher": { "@id": "https://apps-hub-beta.vercel.app/#person" }
+      "publisher": { "@id": "https://apps.garciadev.tech/#person" }
     },
     {
       "@type": "Person",
-      "@id": "https://apps-hub-beta.vercel.app/#person",
+      "@id": "https://apps.garciadev.tech/#person",
       "name": "Fernando Garcia Rangel",
-      "url": "https://apps-hub-beta.vercel.app/",
+      "url": "https://apps.garciadev.tech/",
       "sameAs": ["https://github.com/fernandogarciarangel"]
     },
     {
       "@type": "CollectionPage",
-      "@id": "https://apps-hub-beta.vercel.app/#webpage",
-      "url": "https://apps-hub-beta.vercel.app/",
+      "@id": "https://apps.garciadev.tech/#webpage",
+      "url": "https://apps.garciadev.tech/",
       "name": "Ferramentas grátis de dieta e peso",
-      "isPartOf": { "@id": "https://apps-hub-beta.vercel.app/#website" },
-      "about": { "@id": "https://apps-hub-beta.vercel.app/#person" },
+      "isPartOf": { "@id": "https://apps.garciadev.tech/#website" },
+      "about": { "@id": "https://apps.garciadev.tech/#person" },
       "inLanguage": "pt-BR",
       "mainEntity": {
         "@type": "ItemList",
@@ -106,12 +106,12 @@
             "item": {
               "@type": "WebApplication",
               "name": "WeightChartS",
-              "url": "https://weight-charts.vercel.app/",
+              "url": "https://peso.garciadev.tech/",
               "applicationCategory": "HealthApplication",
               "operatingSystem": "Web",
               "inLanguage": "pt-BR",
               "description": "Acompanhamento de peso corporal com gráfico de evolução, metas e conta na nuvem para ver de qualquer aparelho.",
-              "author": { "@id": "https://apps-hub-beta.vercel.app/#person" },
+              "author": { "@id": "https://apps.garciadev.tech/#person" },
               "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" }
             }
           },
@@ -121,12 +121,12 @@
             "item": {
               "@type": "WebApplication",
               "name": "Refeição Livre",
-              "url": "https://refeicao-livre.vercel.app/",
+              "url": "https://refeicao.garciadev.tech/",
               "applicationCategory": "HealthApplication",
               "operatingSystem": "Web",
               "inLanguage": "pt-BR",
               "description": "Cardápio das principais redes de fast food com a tabela nutricional oficial: calorias, proteínas, carboidratos e gorduras.",
-              "author": { "@id": "https://apps-hub-beta.vercel.app/#person" },
+              "author": { "@id": "https://apps.garciadev.tech/#person" },
               "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" }
             }
           },
@@ -136,12 +136,12 @@
             "item": {
               "@type": "WebApplication",
               "name": "Calculadora TMB",
-              "url": "https://calculadora-tmb-five.vercel.app/",
+              "url": "https://tmb.garciadev.tech/",
               "applicationCategory": "HealthApplication",
               "operatingSystem": "Web",
               "inLanguage": "pt-BR",
               "description": "Calcula a taxa metabólica basal pela fórmula de Mifflin–St Jeor e estima o gasto calórico diário conforme o nível de atividade.",
-              "author": { "@id": "https://apps-hub-beta.vercel.app/#person" },
+              "author": { "@id": "https://apps.garciadev.tech/#person" },
               "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" }
             }
           }
@@ -175,7 +175,7 @@
     </header>
 
     <nav class="menu" aria-label="Aplicativos disponíveis">
-      <a class="entry" href="https://weight-charts.vercel.app/" target="_blank" rel="noopener noreferrer">
+      <a class="entry" href="https://peso.garciadev.tech/" target="_blank" rel="noopener noreferrer">
         <span class="entry-icon" aria-hidden="true">
           <svg viewBox="0 0 32 32" fill="none">
             <path d="M4 22 L11 14 L16 19 L28 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -191,7 +191,7 @@
         </span>
       </a>
 
-      <a class="entry" href="https://refeicao-livre.vercel.app/" target="_blank" rel="noopener noreferrer">
+      <a class="entry" href="https://refeicao.garciadev.tech/" target="_blank" rel="noopener noreferrer">
         <span class="entry-icon" aria-hidden="true">
           <svg viewBox="0 0 32 32" fill="none">
             <path d="M6 10h20M6 10c0 7 4 10 10 10s10-3 10-10M16 20v6M11 26h10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -206,7 +206,7 @@
         </span>
       </a>
 
-      <a class="entry" href="https://calculadora-tmb-five.vercel.app/" target="_blank" rel="noopener noreferrer">
+      <a class="entry" href="https://tmb.garciadev.tech/" target="_blank" rel="noopener noreferrer">
         <span class="entry-icon" aria-hidden="true">
           <svg viewBox="0 0 32 32" fill="none">
             <path d="M16 5c-4 5-8 8-8 14a8 8 0 0 0 16 0c0-3-1.5-5-3-6.5.3 2-.5 3.5-2 4-1-2.5.5-5-3-8.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
